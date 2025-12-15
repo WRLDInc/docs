@@ -60,6 +60,40 @@
         ]
       },
       {
+        "tab": "Onboarding",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "onboarding/overview"
+            ]
+          },
+          {
+            "group": "Microsoft 365",
+            "pages": [
+              "onboarding/microsoft-365/initial-setup"
+            ]
+          },
+          {
+            "group": "Google Workspace",
+            "pages": [
+              "onboarding/google-workspace/overview"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Tools",
+        "groups": [
+          {
+            "group": "Security Tools",
+            "pages": [
+              "tools/securesend"
+            ]
+          }
+        ]
+      },
+      {
         "tab": "Support",
         "groups": [
           {
@@ -67,6 +101,18 @@
             "pages": [
               "support/overview",
               "support/contact"
+            ]
+          },
+          {
+            "group": "Getting Support",
+            "pages": [
+              "support/tickets/help-button"
+            ]
+          },
+          {
+            "group": "Security",
+            "pages": [
+              "support/security/overview"
             ]
           }
         ]
