@@ -1,0 +1,140 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "theme": "mint",
+  "name": "WRLD Tech Docs",
+  "colors": {
+    "primary": "#2563EB",
+    "light": "#3B82F6",
+    "dark": "#1D4ED8"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Overview",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "index",
+              "quickstart",
+              "development",
+              "design",
+              "infrastructure"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "WRLD.host",
+        "groups": [
+          {
+            "group": "Hosting",
+            "pages": [
+              "wrld-host/overview",
+              "wrld-host/getting-started"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "WRLD.tech",
+        "groups": [
+          {
+            "group": "Technology",
+            "pages": [
+              "wrld-tech/overview"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "WRLD.ai",
+        "groups": [
+          {
+            "group": "AI Services",
+            "pages": [
+              "wrld-ai/overview"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Support",
+        "groups": [
+          {
+            "group": "Help Center",
+            "pages": [
+              "support/overview",
+              "support/contact"
+            ]
+          }
+        ]
+      }
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "WRLD.tech",
+          "href": "https://wrld.tech",
+          "icon": "globe"
+        },
+        {
+          "anchor": "WRLD.host",
+          "href": "https://wrld.host",
+          "icon": "server"
+        },
+        {
+          "anchor": "WRLD.ai",
+          "href": "https://wrld.ai",
+          "icon": "robot"
+        },
+        {
+          "anchor": "WRLD.News [Blog]",
+          "href": "https://wrld.news",
+          "icon": "newspaper"
+        }
+      ]
+    }
+  },
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "links": [
+      {
+        "label": "Email Support",
+        "href": "mailto:helpdesk@wrld.tech"
+      },
+      {
+        "label": "Help Center",
+        "href": "https://wrld.help"
+      }
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://wrld.host/clientarea.php"
+    }
+  },
+  "contextual": {
+    "options": [
+     "copy",
+     "view",
+     "chatgpt",
+     "claude",
+     "perplexity",
+     "mcp",
+     "cursor",
+     "vscode"
+   ]
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/wrldtechco",
+      "github": "https://github.com/wrldinc",
+      "linkedin": "https://linkedin.com/company/wrldtech"
+    }
+  }
+}
