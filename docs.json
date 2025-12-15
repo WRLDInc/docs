@@ -144,8 +144,8 @@
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "https://wrld.host/templates/lagom2/assets/img/logo/logo_big.1117628009.png",
+    "dark": "https://wrld.host/templates/lagom2/assets/img/logo/logo_big_inverse.1680786378.png"
   },
   "navbar": {
     "links": [
