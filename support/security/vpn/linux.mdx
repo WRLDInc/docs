@@ -1,0 +1,116 @@
+---
+title: "VPN Setup - Linux"
+description: "Configure WireGuard VPN on Linux"
+---
+
+## Prerequisites
+
+- Linux distribution with kernel 5.6+ (or wireguard-dkms for older kernels)
+- WireGuard configuration file (provided by WRLD)
+- Root/sudo access
+
+## Installation
+
+<Tabs>
+  <Tab title="Ubuntu/Debian">
+    ```bash
+    sudo apt update
+    sudo apt install wireguard
+    ```
+  </Tab>
+
+  <Tab title="Fedora">
+    ```bash
+    sudo dnf install wireguard-tools
+    ```
+  </Tab>
+
+  <Tab title="Arch Linux">
+    ```bash
+    sudo pacman -S wireguard-tools
+    ```
+  </Tab>
+
+  <Tab title="CentOS/RHEL">
+    ```bash
+    sudo yum install epel-release elrepo-release
+    sudo yum install kmod-wireguard wireguard-tools
+    ```
+  </Tab>
+</Tabs>
+
+## Configuration
+
+<Steps>
+  <Step title="Place Configuration File">
+    Copy your `.conf` file to the WireGuard directory:
+
+    ```bash
+    sudo cp /path/to/wrld.conf /etc/wireguard/wrld.conf
+    sudo chmod 600 /etc/wireguard/wrld.conf
+    ```
+  </Step>
+
+  <Step title="Start the VPN">
+    ```bash
+    sudo wg-quick up wrld
+    ```
+
+    You should see output indicating the interface is configured.
+  </Step>
+
+  <Step title="Verify Connection">
+    ```bash
+    sudo wg show
+    ```
+
+    This displays the active tunnel, peer information, and transfer statistics.
+  </Step>
+</Steps>
+
+## Disconnect
+
+```bash
+sudo wg-quick down wrld
+```
+
+## Auto-Start on Boot
+
+To start the VPN automatically:
+
+```bash
+sudo systemctl enable wg-quick@wrld
+sudo systemctl start wg-quick@wrld
+```
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="RTNETLINK answers: Operation not permitted">
+    Ensure you're running the command with `sudo` and that the WireGuard kernel module is loaded:
+    ```bash
+    sudo modprobe wireguard
+    ```
+  </Accordion>
+
+  <Accordion title="resolvconf: command not found">
+    Install the resolvconf package:
+    ```bash
+    # Ubuntu/Debian
+    sudo apt install resolvconf
+
+    # Or use systemd-resolved
+    sudo apt install systemd-resolved
+    ```
+  </Accordion>
+
+  <Accordion title="Handshake not completing">
+    - Check firewall rules (UDP port 51820 must be allowed outbound)
+    - Verify your configuration file is correct
+    - Ensure your IP is whitelisted on the server
+  </Accordion>
+</AccordionGroup>
+
+## Need Help?
+
+Contact [helpdesk@wrld.tech](mailto:helpdesk@wrld.tech).

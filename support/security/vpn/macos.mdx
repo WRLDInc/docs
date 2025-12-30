@@ -1,0 +1,65 @@
+---
+title: "VPN Setup - macOS"
+description: "Configure WireGuard VPN on macOS"
+---
+
+## Prerequisites
+
+- macOS 10.14 or later
+- WireGuard configuration file (provided by WRLD)
+
+## Installation
+
+<Steps>
+  <Step title="Install WireGuard">
+    Download WireGuard from the [Mac App Store](https://apps.apple.com/us/app/wireguard/id1451685025).
+
+    Alternatively, install via Homebrew:
+    ```bash
+    brew install wireguard-tools
+    ```
+  </Step>
+
+  <Step title="Import Configuration">
+    1. Open WireGuard from Applications
+    2. Click **Import tunnel(s) from file** (or drag the `.conf` file onto the app)
+    3. Approve any system permission prompts
+    4. The tunnel will appear in your list
+  </Step>
+
+  <Step title="Activate the VPN">
+    1. Select your tunnel from the list
+    2. Click **Activate**
+    3. You may need to enter your macOS password
+    4. The status will show "Active"
+  </Step>
+</Steps>
+
+## Menu Bar Access
+
+Once configured, you can quickly toggle the VPN from the menu bar:
+- Click the WireGuard icon in the menu bar
+- Select your tunnel to activate/deactivate
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Permission denied">
+    - Go to **System Settings > Privacy & Security > VPN**
+    - Ensure WireGuard is allowed to add VPN configurations
+  </Accordion>
+
+  <Accordion title="Configuration won't import">
+    - Verify the `.conf` file is valid
+    - Check that you received the correct file from WRLD
+  </Accordion>
+
+  <Accordion title="Connected but can't access resources">
+    - Check if Private Relay is disabled (see [iOS Private Relay guide](/support/security/ios-private-relay))
+    - Verify your IP is whitelisted
+  </Accordion>
+</AccordionGroup>
+
+## Need Help?
+
+Contact [helpdesk@wrld.tech](mailto:helpdesk@wrld.tech) or use the [Help Button](/support/tickets/help-button).

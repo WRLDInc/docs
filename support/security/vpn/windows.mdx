@@ -1,0 +1,65 @@
+---
+title: "VPN Setup - Windows"
+description: "Configure WireGuard VPN on Windows"
+---
+
+## Prerequisites
+
+- Windows 10 or later
+- WireGuard configuration file (provided by WRLD)
+- Administrator access
+
+## Installation
+
+<Steps>
+  <Step title="Download WireGuard">
+    Download the official WireGuard client from [wireguard.com/install](https://www.wireguard.com/install/).
+
+    Click **Download Windows Installer** and run the installer.
+  </Step>
+
+  <Step title="Import Configuration">
+    1. Open WireGuard from the Start menu
+    2. Click **Import tunnel(s) from file**
+    3. Select the `.conf` file provided by WRLD
+    4. The tunnel will appear in your list
+  </Step>
+
+  <Step title="Activate the VPN">
+    1. Select your tunnel from the list
+    2. Click **Activate**
+    3. The status will change to "Active" with a green indicator
+  </Step>
+</Steps>
+
+## Verify Connection
+
+Once connected, you should see:
+- **Status**: Active
+- **Transfer**: Data sent/received values increasing
+- **Latest handshake**: Recent timestamp
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Connection fails immediately">
+    - Check your internet connection
+    - Verify the configuration file is correct
+    - Ensure no other VPN is active
+  </Accordion>
+
+  <Accordion title="Connected but no access">
+    - Check if your IP is whitelisted on the target network
+    - Verify DNS settings in the configuration
+    - Contact WRLD support for assistance
+  </Accordion>
+
+  <Accordion title="Slow connection">
+    - Try a different network (avoid restrictive corporate firewalls)
+    - Check if your ISP blocks UDP traffic on port 51820
+  </Accordion>
+</AccordionGroup>
+
+## Need Help?
+
+Contact [helpdesk@wrld.tech](mailto:helpdesk@wrld.tech) or use the [Help Button](/support/tickets/help-button).

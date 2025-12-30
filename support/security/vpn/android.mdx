@@ -1,0 +1,67 @@
+---
+title: "VPN Setup - Android"
+description: "Configure WireGuard VPN on Android devices"
+---
+
+## Prerequisites
+
+- Android 5.0 or later
+- WireGuard configuration file or QR code (provided by WRLD)
+
+## Installation
+
+<Steps>
+  <Step title="Install WireGuard">
+    Download WireGuard from the [Google Play Store](https://play.google.com/store/apps/details?id=com.wireguard.android).
+  </Step>
+
+  <Step title="Add Configuration">
+    **Option A: Scan QR Code**
+    1. Open WireGuard
+    2. Tap the **+** button (blue floating button)
+    3. Select **Scan from QR code**
+    4. Allow camera access and scan the QR code
+    5. Name the tunnel and tap the checkmark
+
+    **Option B: Import File**
+    1. Tap the **+** button
+    2. Select **Import from file or archive**
+    3. Navigate to your `.conf` file and select it
+  </Step>
+
+  <Step title="Activate the VPN">
+    Tap the toggle switch next to your tunnel name. Android will ask permission to set up a VPN connection—tap **OK**.
+  </Step>
+</Steps>
+
+## Quick Settings Tile
+
+Add WireGuard to your Quick Settings:
+1. Swipe down twice to open Quick Settings
+2. Tap the pencil/edit icon
+3. Find "WireGuard" and drag it to your active tiles
+4. Now you can toggle VPN with one tap
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="Connection keeps dropping">
+    - Disable battery optimization for WireGuard
+    - Go to **Settings > Apps > WireGuard > Battery > Unrestricted**
+  </Accordion>
+
+  <Accordion title="VPN icon appears but no connectivity">
+    - Check if another VPN app is interfering
+    - Verify the configuration file is correct
+    - Try restarting your device
+  </Accordion>
+
+  <Accordion title="Can't import configuration">
+    - Ensure the `.conf` file is accessible
+    - Check file permissions in your file manager
+  </Accordion>
+</AccordionGroup>
+
+## Need Help?
+
+Contact [helpdesk@wrld.tech](mailto:helpdesk@wrld.tech).

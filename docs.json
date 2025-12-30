@@ -32,7 +32,8 @@
             "group": "Hosting",
             "pages": [
               "wrld-host/overview",
-              "wrld-host/getting-started"
+              "wrld-host/getting-started",
+              "wrld-host/knowledgebase"
             ]
           }
         ]
@@ -55,6 +56,14 @@
             "group": "AI Services",
             "pages": [
               "wrld-ai/overview"
+            ]
+          },
+          {
+            "group": "AI Tools",
+            "pages": [
+              "ai-tools/claude-code",
+              "ai-tools/cursor",
+              "ai-tools/windsurf"
             ]
           }
         ]
@@ -79,6 +88,12 @@
             "pages": [
               "onboarding/google-workspace/overview"
             ]
+          },
+          {
+            "group": "Domains",
+            "pages": [
+              "onboarding/domains/godaddy-delegated-access"
+            ]
           }
         ]
       },
@@ -100,19 +115,32 @@
             "group": "Help Center",
             "pages": [
               "support/overview",
-              "support/contact"
+              "support/contact",
+              "support/remote-support"
             ]
           },
           {
             "group": "Getting Support",
             "pages": [
-              "support/tickets/help-button"
+              "support/tickets/help-button",
+              "support/tickets/help-button-install"
             ]
           },
           {
             "group": "Security",
             "pages": [
-              "support/security/overview"
+              "support/security/overview",
+              "support/security/ios-private-relay"
+            ]
+          },
+          {
+            "group": "VPN Setup",
+            "pages": [
+              "support/security/vpn/windows",
+              "support/security/vpn/macos",
+              "support/security/vpn/ios",
+              "support/security/vpn/android",
+              "support/security/vpn/linux"
             ]
           }
         ]

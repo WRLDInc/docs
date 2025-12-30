@@ -1,0 +1,69 @@
+---
+title: "VPN Setup - iOS"
+description: "Configure WireGuard VPN on iPhone and iPad"
+---
+
+## Prerequisites
+
+- iOS 15 or later
+- WireGuard configuration file or QR code (provided by WRLD)
+
+## Installation
+
+<Steps>
+  <Step title="Install WireGuard">
+    Download WireGuard from the [App Store](https://apps.apple.com/us/app/wireguard/id1441195209).
+  </Step>
+
+  <Step title="Add Configuration">
+    **Option A: Scan QR Code**
+    1. Open WireGuard
+    2. Tap the **+** button
+    3. Select **Create from QR code**
+    4. Scan the QR code provided by WRLD
+    5. Name the tunnel and tap **Save**
+
+    **Option B: Import File**
+    1. Open the `.conf` file sent to you (via email, AirDrop, etc.)
+    2. Tap **Share** and select **WireGuard**
+    3. The configuration will be imported automatically
+  </Step>
+
+  <Step title="Allow VPN Configuration">
+    iOS will ask permission to add a VPN configuration. Tap **Allow** and authenticate with Face ID, Touch ID, or passcode.
+  </Step>
+
+  <Step title="Activate the VPN">
+    Toggle the switch next to your tunnel name to connect.
+  </Step>
+</Steps>
+
+## Quick Access
+
+Add the VPN toggle to Control Center:
+1. Go to **Settings > Control Center**
+2. Add **VPN** to included controls
+3. Swipe down from the top-right corner to toggle
+
+## Important: Disable Private Relay
+
+If you're using iCloud Private Relay, it may interfere with VPN connectivity. See our guide on [disabling Limit IP Address Tracking](/support/security/ios-private-relay).
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="VPN won't connect">
+    - Ensure you have a stable internet connection
+    - Disable Private Relay/Limit IP Address Tracking
+    - Try connecting on a different network
+  </Accordion>
+
+  <Accordion title="QR code won't scan">
+    - Ensure good lighting and a clear view of the code
+    - Request a configuration file instead
+  </Accordion>
+</AccordionGroup>
+
+## Need Help?
+
+Contact [helpdesk@wrld.tech](mailto:helpdesk@wrld.tech).

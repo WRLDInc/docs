@@ -1,0 +1,78 @@
+---
+title: "Disable Limit IP Address Tracking (iOS)"
+description: "Turn off Private Relay and IP tracking limits for managed networks"
+---
+
+## What is Limit IP Address Tracking?
+
+iOS includes a feature called **Limit IP Address Tracking** (part of iCloud Private Relay) that hides your real IP address from websites and network services. While this enhances privacy on public networks, it can cause issues on managed corporate or home networks.
+
+## When to Disable It
+
+You may need to disable this feature if:
+- Your VPN connection won't establish
+- You can't access internal company resources
+- Network-based authentication isn't working
+- Your IT team requests it for troubleshooting
+
+## How to Turn Off Limit IP Address Tracking
+
+<Steps>
+  <Step title="Open Settings">
+    Tap the **Settings** app on your home screen.
+  </Step>
+
+  <Step title="Select Wi-Fi">
+    Tap **Wi-Fi** to see the list of available networks.
+  </Step>
+
+  <Step title="Choose Your Network">
+    Tap the **ⓘ** (information icon) next to the network you're currently connected to.
+  </Step>
+
+  <Step title="Disable the Toggle">
+    Scroll down and find **Limit IP Address Tracking**.
+
+    Toggle it **off** to disable this feature for this network.
+  </Step>
+</Steps>
+
+<Note>
+This setting is per-network. You'll need to disable it separately for each Wi-Fi network where you need full connectivity.
+</Note>
+
+## Why It's Safe on Managed Networks
+
+Disabling this feature on a **secure, managed network** (like your office) is generally safe because:
+
+1. **Secure Environment** - Managed networks have firewalls, intrusion detection, and regular monitoring
+2. **Trustworthy Network** - IT staff maintain security and minimize vulnerabilities
+3. **Controlled Access** - Not just anyone can join the network, reducing risk
+
+## When to Keep It Enabled
+
+Keep **Limit IP Address Tracking** enabled on:
+- Public Wi-Fi (cafes, airports, hotels)
+- Untrusted networks
+- Networks where you don't need to access corporate resources
+
+## Possible Issues When Disabled
+
+- Your real IP address will be visible to websites and services
+- Some geo-restricted content may behave differently
+- Minor performance differences on some networks
+
+## Conclusion
+
+Turning off Limit IP Address Tracking is safe on secure, managed networks and may improve performance or fix connectivity issues. Use discretion based on the network you're connected to.
+
+## Related Guides
+
+<Columns cols={2}>
+  <Card title="VPN Setup - iOS" icon="mobile" href="/support/security/vpn/ios">
+    Configure WireGuard VPN on iPhone/iPad
+  </Card>
+  <Card title="VPN Setup - macOS" icon="laptop" href="/support/security/vpn/macos">
+    Similar settings apply to macOS Private Relay
+  </Card>
+</Columns>
