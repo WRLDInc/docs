@@ -173,7 +173,8 @@
   },
   "logo": {
     "light": "https://wrld.host/templates/lagom2/assets/img/logo/logo_big.1117628009.png",
-    "dark": "https://wrld.host/templates/lagom2/assets/img/logo/logo_big_inverse.1680786378.png"
+    "dark": "https://wrld.host/templates/lagom2/assets/img/logo/logo_big_inverse.1680786378.png",
+    "href": "https://help.wrld.tech"
   },
   "navbar": {
     "links": [
@@ -182,8 +183,8 @@
         "href": "mailto:helpdesk@wrld.tech"
       },
       {
-        "label": "Help Center",
-        "href": "https://wrld.help"
+        "label": "Open Ticket",
+        "href": "https://wrld.host/contact-us"
       }
     ],
     "primary": {
@@ -209,6 +210,106 @@
       "x": "https://x.com/wrldtechco",
       "github": "https://github.com/wrldinc",
       "linkedin": "https://linkedin.com/company/wrldtech"
+    },
+    "links": [
+      {
+        "header": "Online Support",
+        "items": [
+          {
+            "label": "Web Support / Online Chat",
+            "href": "https://wrld.host/submitticket.php"
+          },
+          {
+            "label": "Call Support [M-F + After Hours]",
+            "href": "/tel:+14698503968"
+          },
+          {
+            "label": "DIY Guides",
+            "href": "https://guides.wrld.tech"
+          }
+        ]
+      },
+      {
+        "header": "WRLD [dot]",
+        "items": [
+          {
+            "label": "[dot] directory",
+            "href": "https://wrld.one"
+          },
+          {
+            "label": "[dot] tech",
+            "href": "https://wrld.tech"
+          },
+          {
+            "label": "[dot] host/cloud",
+            "href": "https://wrld.host"
+          },
+          {
+            "label": "[dot] domains",
+            "href": "https://wrld.domains"
+          },
+          {
+            "label": "[dot] AI [beta open]",
+            "href": "https://wrld.ai"
+          }
+        ]
+      },
+      {
+        "header": "About & More",
+        "items": [
+          {
+            "label": "About WRLD",
+            "href": "https://wrld.tech/about"
+          },
+          {
+            "label": "Contact Team",
+            "href": "https://wrld.tech/contact"
+          },
+          {
+            "label": "Partners / Vendors",
+            "href": "https://wrld.tech/contact"
+          }
+        ]
+      }
+    ]
+  },
+  "icons": {
+    "library": "lucide"
+  },
+  "styling": {
+    "latex": false,
+    "eyebrows": "section"
+  },
+  "integrations": {
+    "telemetry": {
+      "enabled": true
+    },
+    "gtm": {
+      "tagId": "GTM-PHKVHJ3B"
     }
-  }
+  },
+  "seo": {
+    "indexing": "navigable"
+  },
+  "background": {
+    "decoration": "grid",
+    "color": {
+      "light": "#ececec",
+      "dark": "#161616"
+    }
+  },
+  "appearance": {
+    "default": "system"
+  },
+  "banner": {
+    "content": "We are currently migrating our help center - **for urgent matters call us!** (_M-F 469.299.9598 - SLA: 469.850.3968_)",
+    "dismissible": true
+  },
+  "fonts": {
+    "family": "Ubuntu",
+    "body": {
+      "family": "Ubuntu"
+    }
+  },
+  "description": "WRLD Docs, Help Center, Walkthroughs, and more!"
 }
