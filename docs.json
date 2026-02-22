@@ -122,6 +122,8 @@
           {
             "group": "Getting Support",
             "pages": [
+              "support/submit-ticket",
+              "support/client-login",
               "support/tickets/help-button",
               "support/tickets/help-button-install"
             ]
