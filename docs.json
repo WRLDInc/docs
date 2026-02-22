@@ -292,7 +292,7 @@
     "indexing": "navigable"
   },
   "background": {
-    "decoration": "grid",
+    "decoration": "windows",
     "color": {
       "light": "#ececec",
       "dark": "#161616"
@@ -300,10 +300,6 @@
   },
   "appearance": {
     "default": "system"
-  },
-  "banner": {
-    "content": "We are currently migrating our help center - **for urgent matters call us!** (_M-F 469.299.9598 - SLA: 469.850.3968_)",
-    "dismissible": true
   },
   "fonts": {
     "family": "Ubuntu",
