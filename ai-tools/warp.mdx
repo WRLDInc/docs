@@ -1,0 +1,96 @@
+---
+title: "Warp setup"
+description: "Configure Warp for your documentation workflow"
+icon: "terminal"
+---
+
+Warp is an AI-native terminal and agentic development environment. This guide shows how to configure Warp's AI agent (Oz) to help you write and maintain your Mintlify documentation.
+
+## Prerequisites
+
+- Warp installed ([warp.dev](https://www.warp.dev))
+- Access to your documentation repository
+
+## Agent skills
+
+Warp uses **Agent Skills** — markdown files that teach Oz about your project conventions. Skills live in `.agents/skills/` directories and are automatically discovered.
+
+### Create a docs-update skill
+
+Create `.agents/skills/docs-update/SKILL.md` in your documentation repository:
+
+````markdown
+---
+name: docs-update
+description: Maintain and update Mintlify documentation
+---
+
+# Documentation Update Skill
+
+## Project context
+- This is a Mintlify documentation site
+- Content is in MDX files with YAML frontmatter
+- Navigation is configured in `docs.json`
+
+## Writing standards
+- Use second person ("you") for instructions
+- Write in active voice and present tense
+- Start procedures with prerequisites
+- Include expected outcomes for major steps
+- Match the tone and style of existing pages
+
+## Required page structure
+
+Every page must start with frontmatter:
+
+```yaml
+---
+title: "Clear, specific title"
+description: "Concise description for SEO and navigation"
+---
+```
+
+## Mintlify components
+- `<Note>`, `<Warning>`, `<Tip>`, `<Info>`, `<Check>` for callouts
+- `<Steps>` and `<Step>` for sequential procedures
+- `<Tabs>` and `<Tab>` for platform-specific content
+- `<CodeGroup>` for multi-language code examples
+- `<Card>` and `<CardGroup>` for navigation cards
+- `<Accordion>` for collapsible content
+- Wrap images in `<Frame>` with descriptive alt text
+````
+
+### Create a WARP.md project file
+
+Add a `WARP.md` file at the root of your documentation repository to provide project-level context:
+
+````markdown
+# WARP.md
+
+## Project Overview
+This is a Mintlify documentation site. Content is written in MDX format and configured via `docs.json`.
+
+## Development Commands
+
+```bash
+# Install Mintlify CLI
+npm i -g mint
+
+# Run local dev server
+mint dev
+```
+
+## Architecture
+- `docs.json` - Main site configuration
+- Content pages use `.mdx` format with YAML frontmatter
+- `snippets/` - Reusable MDX content blocks
+- `images/` - Documentation images
+````
+
+## Using skills across projects
+
+Place skills in `~/.agents/skills/` to make them available in all your repositories. Project-level skills in `.agents/skills/` take precedence for that project.
+
+<Tip>
+  You can find a curated collection of reusable skills at [github.com/anthropics/agent-skills](https://agentskills.io).
+</Tip>
