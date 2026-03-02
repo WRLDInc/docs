@@ -1,0 +1,105 @@
+---
+title: "Warp agent skills setup"
+description: "Configure Warp agent skills for your documentation workflow"
+icon: "wand-magic-sparkles"
+---
+
+Warp is an agentic development environment with built-in AI capabilities. Agent skills are markdown files that teach Warp's AI agents about your conventions, workflows, and best practices. This guide shows how to set up agent skills for your documentation project.
+
+## Prerequisites
+
+- [Warp](https://www.warp.dev) installed
+- Access to your documentation repository
+
+## Setup
+
+1. Create the skills directory in your documentation repository:
+
+  ```bash
+  mkdir -p .agents/skills
+  ```
+
+2. Each skill is a folder containing a `SKILL.md` file with YAML frontmatter and markdown instructions.
+
+3. Warp automatically discovers and loads skills from `.agents/skills/` when relevant to your current task.
+
+## Add a documentation skill
+
+Create a skill that teaches Warp about your Mintlify documentation standards:
+
+```bash
+mkdir -p .agents/skills/docs-conventions
+```
+
+Create `.agents/skills/docs-conventions/SKILL.md`:
+
+````markdown
+---
+name: docs-conventions
+description: Enforce documentation conventions and Mintlify standards. Use when editing or creating documentation pages.
+---
+
+# Documentation Conventions
+
+## Page structure
+- Every MDX file must begin with YAML frontmatter containing `title` and `description`
+- Use second-person voice ("you") for instructions
+- Start procedures with prerequisites
+- Include expected outcomes for major steps
+
+## Mintlify components
+- Use `<Steps>` for sequential procedures
+- Use `<Tabs>` for platform-specific content
+- Use `<CodeGroup>` for multi-language examples
+- Wrap images in `<Frame>` with descriptive alt text
+- Use `<Note>`, `<Warning>`, `<Tip>` for callouts
+
+## Navigation
+- Add new pages to `docs.json` under the appropriate tab and group
+- Use kebab-case for file and directory names
+````
+
+## Use pre-built skills
+
+The [oz-skills](https://github.com/wrldinc/oz-skills) repository contains a catalog of reusable agent skills. To use one:
+
+1. Browse the available skills in `.agents/skills/`.
+2. Copy the skill folder into your project's `.agents/skills/` directory:
+
+  ```bash
+  cp -r path/to/oz-skills/.agents/skills/docs-update .agents/skills/
+  ```
+
+3. Warp detects the new skill on your next interaction.
+
+<Tip>
+  You can also install skills globally at `~/.agents/skills/` to use them across all projects.
+</Tip>
+
+## Available skills for documentation
+
+Skills from the catalog that are especially useful for documentation workflows:
+
+- **docs-update** — Automatically reviews code changes and updates documentation to keep it in sync with the codebase
+- **seo-aeo-audit** — Audits pages for SEO and answer-engine optimization
+- **web-accessibility-audit** — Checks documentation for accessibility compliance
+- **web-performance-audit** — Analyzes page performance and suggests improvements
+
+## Skill file format
+
+Each skill follows the [Agent Skills](https://agentskills.io) open standard:
+
+```markdown
+---
+name: skill-name
+description: What this skill does. Use when the relevant scenario occurs.
+---
+
+# Skill Title
+
+Instructions, examples, and guidance in markdown.
+```
+
+<Note>
+  Learn more about the Agent Skills specification at [agentskills.io](https://agentskills.io) or see the [Oz Skills documentation](https://docs.warp.dev/agent-platform/cloud-agents/skills-as-agents).
+</Note>

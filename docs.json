@@ -59,11 +59,12 @@
             ]
           },
           {
-            "group": "AI Tools",
+          "group": "AI Tools",
             "pages": [
               "ai-tools/claude-code",
               "ai-tools/cursor",
-              "ai-tools/windsurf"
+              "ai-tools/windsurf",
+              "ai-tools/warp-skills"
             ]
           }
         ]
