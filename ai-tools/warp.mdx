@@ -1,0 +1,112 @@
+---
+title: "Warp setup"
+description: "Configure Warp and Oz Agent Skills for your documentation workflow"
+icon: "bolt"
+---
+
+Warp is an agentic development environment with a built-in AI agent called Oz. This guide shows how to configure Warp for your Mintlify documentation projects using Agent Skills.
+
+## Prerequisites
+
+- Warp terminal installed ([warp.dev](https://warp.dev))
+- Access to your documentation repository
+
+## Agent Skills
+
+Agent Skills are markdown files that teach Oz about your conventions, workflows, and best practices. Warp agents automatically discover and use skills placed in `.agents/skills/` directories.
+
+Each skill is a folder containing a `SKILL.md` file with YAML frontmatter and markdown instructions:
+
+```
+.agents/skills/
+└── your-skill-name/
+    └── SKILL.md
+```
+
+Skills can live in two locations:
+
+- **Project-level**: `.agents/skills/` in your repository root (shared with your team)
+- **Global**: `~/.agents/skills/` on your machine (available across all projects)
+
+## Pre-built skills
+
+WRLD maintains a catalog of reusable skills in the [oz-skills](https://github.com/wrldinc/oz-skills) repository. To use one:
+
+1. Copy the skill folder from `.agents/skills/` in the repository
+2. Paste it into your project's `.agents/skills/` directory (or `~/.agents/skills/` for global use)
+3. Warp will automatically detect the skill on your next interaction
+
+Available skills include:
+
+- **docs-update** — Review code changes and update user-facing documentation automatically
+- **ci-fix** — Diagnose and fix CI pipeline failures
+- **create-pull-request** — Generate well-structured pull requests from code changes
+- **seo-aeo-audit** — Audit pages for SEO and AI search engine optimization
+- **web-accessibility-audit** — Check sites against WCAG accessibility criteria
+- **web-performance-audit** — Analyze and improve web performance metrics
+- **mcp-builder** — Build Model Context Protocol servers
+- **terraform-style-check** — Enforce Terraform style and best practices
+- **webapp-testing** — Automate web application testing workflows
+- **github-bug-report-triage** — Triage incoming GitHub bug reports
+- **github-issue-dedupe** — Identify and manage duplicate GitHub issues
+- **slack-qa-investigate** — Investigate questions from Slack channels
+- **scheduler** — Schedule and manage recurring agent tasks
+
+## Create `WARP.md`
+
+Create a `WARP.md` file at the root of your documentation repository to provide Oz with project context:
+
+````markdown
+# WARP.md
+
+This file provides guidance to WARP (warp.dev) when working with code in this repository.
+
+## Project Overview
+
+This is a **Mintlify documentation site**. Content is written in MDX format and configured via `docs.json`.
+
+## Development Commands
+
+```bash
+# Install Mintlify CLI (requires Node.js 19+)
+npm i -g mint
+
+# Run local dev server (default: http://localhost:3000)
+mint dev
+
+# Run on custom port
+mint dev --port 3333
+
+# Update CLI to latest version
+npm mint update
+
+# Validate links
+mint broken-links
+```
+
+## Content Structure
+
+All documentation pages use `.mdx` format with YAML frontmatter. Navigation is tab-based, configured in `docs.json` under `navigation.tabs`.
+
+To add a new page:
+1. Create the `.mdx` file in the appropriate directory
+2. Add the page path to the relevant group in `docs.json`
+
+## Writing Standards
+
+- Second-person voice ("you")
+- Prerequisites at start of procedural content
+- Match style and formatting of existing pages
+- Relative paths for internal links
+- Include both basic and advanced use cases
+- Language tags on all code blocks
+- Alt text on all images
+
+## Deployment
+
+Changes pushed to the default branch auto-deploy via Mintlify's GitHub integration. No manual build step required.
+````
+
+<Note>
+  Learn more about Agent Skills at [agentskills.io](https://agentskills.io) and about Oz at [Oz Skills Documentation](https://docs.warp.dev/agent-platform/cloud-agents/skills-as-agents).
+</Note>
