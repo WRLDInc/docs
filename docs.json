@@ -63,6 +63,7 @@
             "pages": [
               "ai-tools/claude-code",
               "ai-tools/cursor",
+              "ai-tools/warp",
               "ai-tools/windsurf"
             ]
           }
