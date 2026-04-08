@@ -36,6 +36,7 @@ All documentation pages use `.mdx` format with YAML frontmatter:
 - `wrld-host/` - Hosting service docs
 - `wrld-tech/` - Technology service docs  
 - `wrld-ai/` - AI service docs
+- `ai-tools/` - AI tool setup guides (Warp, Claude Code, Cursor, Windsurf)
 - `onboarding/` - Client onboarding guides (Microsoft 365, Google Workspace)
 - `tools/` - Internal tools documentation
 - `support/` - Help center and support guides
