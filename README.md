@@ -1,43 +1,76 @@
-# Mintlify Starter Kit
+# WRLD Tech Docs
 
-Use the starter kit to get your docs deployed and ready to customize.
+Source for the public WRLD Tech documentation site at [help.wrld.tech](https://help.wrld.tech). It is a [Mintlify](https://mintlify.com) site authored in MDX and configured via [`docs.json`](./docs.json).
 
-Click the green **Use this template** button at the top of this repo to copy the Mintlify starter kit. The starter kit contains examples with
+This repo is the documentation surface for the WRLD Tech Co. ecosystem:
 
-- Guide pages
-- Navigation
-- Customizations
-- API reference pages
-- Use of popular components
+- [WRLD.tech](https://wrld.tech) — primary technology portal and brand hub
+- [WRLD.host](https://wrld.host) — hosting, domains, SSL, VoIP, and related infrastructure (client area powered by WHMCS)
+- [WRLD.ai](https://wrld.ai) — AI tooling and integrations
+- [WRLD.one](https://wrld.one) — unified directory for every WRLD service (canonical source for the service list, brand tokens, and typography used in these docs)
+- [WRLD.support](https://wrld.support) / [help.wrld.tech](https://help.wrld.tech) — support, onboarding, and this documentation site
 
-**[Follow the full quickstart guide](https://starter.mintlify.com/quickstart)**
+## Local preview
 
-## Development
+Prerequisites: Node.js 19+.
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mint) to preview your documentation changes locally. To install, use the following command:
-
-```
+```bash
+# Install the Mintlify CLI (one-time)
 npm i -g mint
-```
 
-Run the following command at the root of your documentation, where your `docs.json` is located:
-
-```
+# From the repo root (where docs.json lives)
 mint dev
 ```
 
-View your local preview at `http://localhost:3000`.
+Then open <http://localhost:3000>. Pages hot-reload as you edit `.mdx` files.
 
-## Publishing changes
+Useful commands:
 
-Install our GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app) to propagate changes from your repo to your deployment. Changes are deployed to production automatically after pushing to the default branch.
+```bash
+mint dev --port 3333   # run on a non-default port
+mint broken-links      # validate internal links
+mint update            # upgrade the CLI
+```
 
-## Need help?
+## Repository layout
 
-### Troubleshooting
+```
+.
+├── docs.json                # Site navigation, theme, anchors, footer, integrations
+├── index.mdx                # Homepage
+├── about.mdx                # About WRLD Tech Co. (mission, vision, values)
+├── quickstart.mdx           # Customer quickstart
+├── development.mdx          # Contributor guide for this docs repo
+├── design.mdx               # WRLD brand tokens used by the docs site
+├── infrastructure.mdx       # High-level stack and infrastructure overview
+├── wrld-host/               # wrld.host product docs (hosting, client area)
+├── wrld-tech/               # wrld.tech product docs and brand guide
+├── wrld-ai/                 # wrld.ai product docs
+├── ai-tools/                # Guides for Claude Code, Cursor, Warp, Windsurf
+├── onboarding/              # Microsoft 365, Google Workspace, domain onboarding
+├── tools/                   # Internal tools (e.g. SecureSend)
+├── support/                 # Help center, tickets, security, VPN setup
+├── images/                  # Screenshots and diagrams referenced from MDX
+├── logo/                    # Light/dark SVG logos
+└── favicon.svg
+```
 
-- If your dev environment isn't running: Run `mint update` to ensure you have the most recent version of the CLI.
-- If a page loads as a 404: Make sure you are running in a folder with a valid `docs.json`.
+Brand tokens (colors, typography) are mirrored from the canonical source in [`WRLDInc/wrld.one`](https://github.com/WRLDInc/wrld.one). See [`design.mdx`](./design.mdx) and [`wrld-tech/brand-guide.mdx`](./wrld-tech/brand-guide.mdx).
 
-### Resources
-- [Mintlify documentation](https://mintlify.com/docs)
+## Adding content
+
+1. Create a new `.mdx` file under the relevant section directory.
+2. Add a YAML frontmatter block with `title` and `description`.
+3. Register the page path in the appropriate group inside `docs.json` (Mintlify does not auto-discover pages).
+4. Run `mint dev` and confirm the page renders and navigation is correct.
+5. Run `mint broken-links` before opening a PR.
+
+See [`development.mdx`](./development.mdx) for the full contributor guide.
+
+## Deployment
+
+Merges to the default branch are auto-deployed by Mintlify's GitHub integration. There is no separate build step in CI.
+
+## License
+
+See [`LICENSE`](./LICENSE). Content © WRLD Tech Co. (WRLD Inc.).

@@ -1,27 +1,54 @@
 ---
 title: "Infrastructure"
-description: "WRLD Tech infrastructure overview"
+description: "How WRLD Tech Co. runs its platforms"
 ---
 
-## Overview
+WRLD Tech Co. (WRLD Inc.) operates the full stack behind our client-facing services — hosting, DNS, mail, VoIP, remote support, and AI tooling. This page is a high-level overview; deeper guides live under each product section.
 
-WRLD Tech operates a robust infrastructure designed for reliability, security, and performance.
+## Platforms and stack
 
-## Data Centers
+| Surface                               | Platform / stack                                                                 |
+| ------------------------------------- | -------------------------------------------------------------------------------- |
+| `help.wrld.tech` (this site)          | Mintlify (MDX content) deployed from [`WRLDInc/docs`](https://github.com/WRLDInc/docs) |
+| `wrld.one` (service directory)        | [Astro](https://astro.build) on [Cloudflare Workers](https://workers.cloudflare.com) |
+| `wrld.host` client area & billing     | WHMCS (hosting, domains, SSL, invoicing, ticketing)                              |
+| `wrld.tech` / `wrld.ai` / marketing   | WRLD.host shared infrastructure with CDN + SSL                                   |
+| `status.wrld.host`                    | Uptime monitoring and incident history                                           |
+| `ipfs.wrld.tech`                      | IPFS gateway for decentralized content                                           |
 
-Our infrastructure spans multiple geographic regions to ensure low latency and high availability.
+The canonical service list is maintained in [`WRLDInc/wrld.one`](https://github.com/WRLDInc/wrld.one). Any new WRLD property should be added there first, then surfaced in these docs and in `docs.json` anchors as appropriate.
+
+## Hosting
+
+WRLD.host provides:
+
+- Shared, reseller, and dedicated hosting
+- Domain registration and DNS (including delegated access — see [GoDaddy Delegated Access](/onboarding/domains/godaddy-delegated-access))
+- SSL issuance and renewal
+- Business email and VoIP services
+
+Hosting is reserved for WRLD clients, which keeps neighbors known and traffic quality predictable.
 
 ## Security
 
-- DDoS protection
-- SSL/TLS encryption
-- Regular security audits
-- 24/7 monitoring
+- TLS on every public endpoint
+- DDoS protection at the edge
+- 24/7 infrastructure monitoring
+- Managed backups and BCDR for supported plans
+- Security guidance for clients under [Support → Security](/support/security/overview), including VPN setup ([Windows](/support/security/vpn/windows), [macOS](/support/security/vpn/macos), [iOS](/support/security/vpn/ios), [Android](/support/security/vpn/android), [Linux](/support/security/vpn/linux))
+- Secure file exchange via [SecureSend](/tools/securesend)
 
-## Compliance
+## Identity and onboarding
 
-We maintain compliance with industry standards and best practices for data security and privacy.
+We operate both Microsoft 365 and Google Workspace tenants for clients. Start at:
+
+- [Microsoft 365 initial setup](/onboarding/microsoft-365/initial-setup)
+- [Google Workspace overview](/onboarding/google-workspace/overview)
+
+## AI tooling
+
+WRLD.ai is the AI arm of the business. Day-to-day client tooling is documented under [AI Tools](/ai-tools/claude-code) (Claude Code, Cursor, Warp, Windsurf). Platform details live under [WRLD.ai Overview](/wrld-ai/overview).
 
 ## Status
 
-Check our system status at any time for real-time updates on service availability.
+Real-time service status is published at [status.wrld.host](https://status.wrld.host).

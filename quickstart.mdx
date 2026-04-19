@@ -1,79 +1,71 @@
 ---
 title: "Quickstart"
-description: "Start building awesome documentation in minutes"
+description: "Get up and running with WRLD Tech Co. services"
 ---
 
-## Get started in three steps
+WRLD Tech Co. (WRLD Inc.) is a business technology consultancy. This quickstart points you at the right place to start, depending on what you need.
 
-Get your documentation site running locally and make your first customization.
-
-### Step 1: Set up your local environment
-
-<AccordionGroup>
-  <Accordion icon="copy" title="Clone your docs locally">
-    During the onboarding process, you created a GitHub repository with your docs content if you didn't already have one. You can find a link to this repository in your [dashboard](https://dashboard.mintlify.com).
-
-    To clone the repository locally so that you can make and preview changes to your docs, follow the [Cloning a repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) guide in the GitHub docs.
-  </Accordion>
-  <Accordion icon="rectangle-terminal" title="Start the preview server">
-    1. Install the Mintlify CLI: `npm i -g mint`
-    2. Navigate to your docs directory and run: `mint dev`
-    3. Open `http://localhost:3000` to see your docs live!
-
-    <Tip>
-      Your preview updates automatically as you edit files.
-    </Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 2: Deploy your changes
-
-<AccordionGroup>
-  <Accordion icon="github" title="Install our GitHub app">
-    Install the Mintlify GitHub app from your [dashboard](https://dashboard.mintlify.com/settings/organization/github-app).
-
-    Our GitHub app automatically deploys your changes to your docs site, so you don't need to manage deployments yourself.
-  </Accordion>
-  <Accordion icon="palette" title="Update your site name and colors">
-    For a first change, let's update the name and colors of your docs site.
-
-    1. Open `docs.json` in your editor.
-    2. Change the `"name"` field to your project name.
-    3. Update the `"colors"` to match your brand.
-    4. Save and see your changes instantly at `http://localhost:3000`.
-
-    <Tip>
-      Try changing the primary color to see an immediate difference!
-    </Tip>
-  </Accordion>
-</AccordionGroup>
-
-### Step 3: Go live
-
-<Accordion icon="rocket" title="Publish your docs">
-  1. Commit and push your changes.
-  2. Your docs will update and be live in moments!
-</Accordion>
-
-## Next steps
-
-Now that you have your docs running, explore these key features:
+## Pick the right entry point
 
 <CardGroup cols={2}>
-  <Card icon="pen-to-square" href="/essentials/markdown" title="Write Content">
-    Learn MDX syntax and start writing your documentation.
+  <Card title="I'm a new client" icon="user-plus" href="/onboarding/overview">
+    Kick off onboarding for Microsoft 365, Google Workspace, or domain delegation.
   </Card>
-  <Card icon="palette" href="/essentials/settings" title="Customize style">
-    Make your docs match your brand perfectly.
+  <Card title="I need support" icon="headset" href="/support/overview">
+    Open a ticket, request remote support, or reach the help desk.
   </Card>
-  <Card icon="square-code" href="/essentials/code" title="Add code examples">
-    Include syntax-highlighted code blocks.
+  <Card title="I host with WRLD.host" icon="server" href="/wrld-host/overview">
+    Access the client area, manage hosting, and browse the knowledgebase.
   </Card>
-  <Card icon="code" href="/api-reference/introduction" title="API documentation">
-    Auto-generate API docs from OpenAPI specs.
+  <Card title="I'm exploring WRLD.ai" icon="robot" href="/wrld-ai/overview">
+    Learn what AI tooling and integrations WRLD offers.
   </Card>
 </CardGroup>
 
-<Note>
-  **Need help?** See our [full documentation](https://mintlify.com/docs) or join our [community](https://mintlify.com/community).
-</Note>
+## Three steps to get started
+
+<Steps>
+  <Step title="Reach out">
+    Email [helpdesk@wrld.tech](mailto:helpdesk@wrld.tech) or [open a ticket](https://wrld.host/contact-us). Include your company name, the service you are interested in, and any relevant context.
+  </Step>
+  <Step title="Onboard">
+    We'll walk you through identity, domain, and tenant setup. Follow the applicable guide under [Onboarding](/onboarding/overview) (Microsoft 365, Google Workspace, domain delegation).
+  </Step>
+  <Step title="Use the client area">
+    Sign in at the [WRLD.host client area](https://wrld.host/clientarea.php) to manage services, invoices, and tickets. Bookmark [help.wrld.tech](https://help.wrld.tech) for these docs.
+  </Step>
+</Steps>
+
+## Getting support
+
+<AccordionGroup>
+  <Accordion icon="envelope" title="Email">
+    [helpdesk@wrld.tech](mailto:helpdesk@wrld.tech) — monitored during business hours (Mon–Fri, 10am–6pm CT) and after-hours for active clients.
+  </Accordion>
+  <Accordion icon="ticket" title="Open a ticket">
+    Use the [client area](https://wrld.host/submitticket.php) or the in-page help button on supported sites. See [Submit a Ticket](/support/submit-ticket).
+  </Accordion>
+  <Accordion icon="phone" title="Call">
+    +1 (469) 850-3968 — Mon–Fri + after-hours for active clients.
+  </Accordion>
+  <Accordion icon="display" title="Remote support">
+    See [Remote Support](/support/remote-support) for our approved remote-assist tools.
+  </Accordion>
+</AccordionGroup>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="About WRLD Tech Co." icon="circle-info" href="/about">
+    Mission, vision, and values.
+  </Card>
+  <Card title="Brand & Design" icon="palette" href="/wrld-tech/brand-guide">
+    Colors, typography, and logo usage.
+  </Card>
+  <Card title="AI Tools" icon="wand-magic-sparkles" href="/ai-tools/claude-code">
+    Guides for Claude Code, Cursor, Warp, and Windsurf.
+  </Card>
+  <Card title="Infrastructure" icon="network-wired" href="/infrastructure">
+    How WRLD's stack is put together.
+  </Card>
+</CardGroup>

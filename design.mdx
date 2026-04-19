@@ -1,27 +1,41 @@
 ---
 title: "Design Guidelines"
-description: "WRLD Tech brand and design standards"
+description: "WRLD Tech brand tokens used across the docs site"
 ---
 
-## Brand Colors
+These are the brand tokens used by WRLD Tech Co. across `help.wrld.tech`, `wrld.one`, `wrld.tech`, and related properties. The canonical source is the [`WRLDInc/wrld.one`](https://github.com/WRLDInc/wrld.one) repository — update there first if any token changes, then mirror here.
 
-The WRLD Tech brand uses a modern blue palette:
+For the full brand guide (logo usage, spacing, voice), see [Brand Guide](/wrld-tech/brand-guide).
 
-- **Primary**: #2563EB
-- **Light**: #3B82F6
-- **Dark**: #1D4ED8
+## Color palette
+
+| Token        | Hex       | Usage                                         |
+| ------------ | --------- | --------------------------------------------- |
+| Primary Blue | `#00adee` | Primary action color (Vivid Cerulean)         |
+| Purple       | `#3d1f78` | Accent / gradient (Explorer of the Galaxies)  |
+| Gold         | `#d48c2f` | Highlight (Opulent)                           |
+| Dark Navy    | `#182534` | Dark mode surfaces and text                   |
+| Light        | `#fcfcfc` | Light mode surfaces                           |
+
+The docs site itself currently uses a blue accent defined in `docs.json` (`colors.primary`, `colors.light`, `colors.dark`) that complements the WRLD primary palette above.
 
 ## Typography
 
-We use clean, modern fonts for readability across all platforms.
+| Role        | Family        | Weights         |
+| ----------- | ------------- | --------------- |
+| Display     | Montserrat    | 700, 800        |
+| Body        | Ubuntu        | 400, 500, 700   |
+| Subheadings | Source Sans 3 | 400, 500, 600   |
 
-## Logo Usage
+The docs site body font is set in `docs.json` (`fonts.family`) and matches the WRLD body font.
 
-WRLD logos should be used consistently across all materials. See the logo assets in the `/logo` directory for light and dark variants.
+## Logo usage
 
-## Design Principles
+WRLD logos live in the `/logo` directory and ship in light and dark SVG variants. Always use the SVG source; do not re-export or recolor logos ad hoc. Logo URLs for the docs site are configured in `docs.json` under `logo.light` and `logo.dark`.
 
-1. **Clarity** - Information should be easy to find and understand
-2. **Consistency** - Maintain consistent patterns across products
-3. **Accessibility** - Design for all users
-4. **Performance** - Prioritize fast, responsive experiences
+## Design principles
+
+1. **Clarity** — information should be easy to find and understand.
+2. **Consistency** — maintain consistent patterns across products, docs, and marketing.
+3. **Accessibility** — design for all users; respect reduced-motion and contrast requirements.
+4. **Performance** — prioritize fast, responsive experiences; prefer static content and edge delivery.

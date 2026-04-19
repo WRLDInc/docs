@@ -2,56 +2,66 @@
 
 This file provides guidance to WARP (warp.dev) when working with code in this repository.
 
-## Project Overview
+## Project overview
 
-This is a **Mintlify documentation site** for WRLD Tech services (WRLD.host, WRLD.tech, WRLD.ai). Content is written in MDX format and configured via `docs.json`.
+This is the public **WRLD Tech documentation site** for WRLD Tech Co. (WRLD Inc.), covering WRLD.tech, WRLD.host, WRLD.ai, WRLD.support, and related onboarding/tooling. It is a [Mintlify](https://mintlify.com) site authored in MDX and configured via `docs.json`. It ships to [help.wrld.tech](https://help.wrld.tech).
 
-## Development Commands
+The canonical WRLD service directory, brand colors, and typography used by these docs are defined in [`WRLDInc/wrld.one`](https://github.com/WRLDInc/wrld.one) (an Astro + Cloudflare Workers site). Keep brand tokens in `design.mdx` and `wrld-tech/brand-guide.mdx` consistent with that source.
+
+## Development commands
 
 ```bash
-# Install Mintlify CLI (requires Node.js 19+)
+# Install the Mintlify CLI (requires Node.js 19+)
 npm i -g mint
 
-# Run local dev server (default: http://localhost:3000)
+# Run the local dev server (default: http://localhost:3000)
 mint dev
 
-# Run on custom port
+# Run on a custom port
 mint dev --port 3333
 
-# Update CLI to latest version
-npm mint update
+# Upgrade the CLI
+mint update
 
-# Validate links
+# Validate internal links
 mint broken-links
 ```
 
 ## Architecture
 
 ### Configuration
-- `docs.json` - Main site configuration: navigation tabs, theme colors, logos, navbar, footer socials, and external anchors
+- `docs.json` — site configuration: navigation tabs, theme colors, logos, navbar, footer, global anchors, integrations (GTM, telemetry).
 
-### Content Structure
-All documentation pages use `.mdx` format with YAML frontmatter:
-- `index.mdx` - Homepage
-- `wrld-host/` - Hosting service docs
-- `wrld-tech/` - Technology service docs  
-- `wrld-ai/` - AI service docs
-- `onboarding/` - Client onboarding guides (Microsoft 365, Google Workspace)
-- `tools/` - Internal tools documentation
-- `support/` - Help center and support guides
-- `api-reference/` - API endpoint documentation
+### Content structure
+All pages are `.mdx` with YAML frontmatter.
+
+- `index.mdx` — homepage
+- `about.mdx` — WRLD Tech Co. mission, vision, values
+- `quickstart.mdx` — customer quickstart
+- `development.mdx` — contributor guide for this docs repo
+- `design.mdx` — brand tokens mirrored from `wrld.one`
+- `infrastructure.mdx` — stack / infrastructure overview
+- `wrld-host/` — hosting service docs
+- `wrld-tech/` — technology service docs (includes brand guide)
+- `wrld-ai/` — AI service docs
+- `ai-tools/` — Claude Code, Cursor, Warp, Windsurf guides
+- `onboarding/` — Microsoft 365, Google Workspace, domain onboarding
+- `tools/` — internal tools (SecureSend, etc.)
+- `support/` — help center, tickets, security, VPN setup
 
 ### Assets
-- `snippets/` - Reusable MDX content blocks
-- `logo/` - Light/dark mode logos (SVG)
-- `images/` - Documentation images
+- `logo/` — light/dark SVG logos
+- `images/` — documentation images
+- `favicon.svg`
 
 ## Navigation
 
 Navigation is tab-based, configured in `docs.json` under `navigation.tabs`. Each tab contains groups of pages. To add a new page:
-1. Create the `.mdx` file in the appropriate directory
-2. Add the page path to the relevant group in `docs.json`
+
+1. Create the `.mdx` file under the appropriate directory.
+2. Add the page path (without the `.mdx` extension) to the relevant group in `docs.json`.
+3. Preview with `mint dev` and verify with `mint broken-links`.
 
 ## Deployment
 
-Changes pushed to the default branch auto-deploy via Mintlify's GitHub integration. No manual build step required.
+Changes merged to the default branch auto-deploy via Mintlify's GitHub integration. No manual build step is required.
