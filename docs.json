@@ -102,6 +102,12 @@
         "tab": "Tools",
         "groups": [
           {
+            "group": "Development Tools",
+            "pages": [
+              "tools/conda-nodejs"
+            ]
+          },
+          {
             "group": "Security Tools",
             "pages": [
               "tools/securesend"
@@ -133,6 +139,7 @@
             "group": "Security",
             "pages": [
               "support/security/overview",
+              "support/security/cloudflare-access",
               "support/security/ios-private-relay"
             ]
           },
