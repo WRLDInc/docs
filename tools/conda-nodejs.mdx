@@ -155,10 +155,12 @@ conda env create -f environment.yml
   </Step>
   <Step title="Every time you work on docs">
     ```bash
-    cd ~/repos/docs
+    cd /path/to/your/docs-repo
     conda activate docs-mintlify
     mint dev
     ```
+
+    Replace `/path/to/your/docs-repo` with the path where you cloned this repository. Run `mint dev` from the directory that contains `docs.json`.
 
     The preview runs at [http://localhost:3000](http://localhost:3000).
   </Step>
