@@ -1,0 +1,237 @@
+---
+title: "Cloudflare Access (Zero Trust)"
+description: "Install the WARP client and sign in to your organization's Cloudflare One tenant with Microsoft Entra ID or Google Workspace"
+icon: "shield-check"
+---
+
+WRLD uses [Cloudflare Zero Trust](https://www.cloudflare.com/zero-trust/) (also known as **Cloudflare One**) to protect internal applications and client environments. This guide walks you through installing the Cloudflare WARP client on your device and authenticating to your organization's tenant via single sign‑on (SSO).
+
+## Prerequisites
+
+- A device running macOS, Windows, iOS, Android, or Linux.
+- An active user account in your organization's identity provider:
+  - **Microsoft Entra ID** (Azure AD) for Microsoft 365 organizations, or
+  - **Google Workspace** for Google-based organizations.
+- Your organization's **team name** (see below).
+
+<Info>
+  **Team names**
+  - WRLD staff: team name is `wrld`. Tenant URL: [`https://wrld.cloudflareaccess.com`](https://wrld.cloudflareaccess.com).
+  - SLA‑supported clients: use your **company shortname** issued by WRLD. Tenant URL: `https://<shortname>.cloudflareaccess.com`.
+
+  If you aren't sure of your shortname, check your onboarding email or contact [helpdesk@wrld.tech](mailto:helpdesk@wrld.tech).
+</Info>
+
+## Step 1 — Install the Cloudflare WARP client
+
+<Tabs>
+  <Tab title="macOS">
+    Download and install from Cloudflare:
+
+    - [Cloudflare WARP for macOS](https://1.1.1.1/)
+
+    Or install via Homebrew:
+
+    ```bash
+    brew install --cask cloudflare-warp
+    ```
+
+    After install, launch **Cloudflare WARP** from `/Applications`. Accept the warning about installing a system extension/network filter.
+  </Tab>
+
+  <Tab title="Windows">
+    Download and install from Cloudflare:
+
+    - [Cloudflare WARP for Windows](https://1.1.1.1/)
+
+    Or install via `winget`:
+
+    ```powershell
+    winget install --id Cloudflare.Warp -e
+    ```
+
+    After install, launch **Cloudflare WARP** from the Start menu.
+  </Tab>
+
+  <Tab title="iOS / iPadOS">
+    Install the **Cloudflare One Agent** from the App Store:
+
+    - [Cloudflare One Agent on the App Store](https://apps.apple.com/app/cloudflare-one-agent/id6443476898)
+
+    <Warning>
+      Do **not** use the older "1.1.1.1: Faster Internet" app — that's the consumer app and cannot enroll in a Zero Trust team.
+    </Warning>
+  </Tab>
+
+  <Tab title="Android">
+    Install the **Cloudflare One Agent** from Google Play:
+
+    - [Cloudflare One Agent on Google Play](https://play.google.com/store/apps/details?id=com.cloudflare.cloudflareoneagent)
+  </Tab>
+
+  <Tab title="Linux">
+    Follow Cloudflare's per‑distro instructions:
+
+    - [Linux install guide (Cloudflare docs)](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/download-warp/#linux)
+
+    Example for Ubuntu/Debian:
+
+    ```bash
+    curl -fsSL https://pkg.cloudflareclient.com/pubkey.gpg | sudo gpg --yes --dearmor --output /usr/share/keyrings/cloudflare-warp-archive-keyring.gpg
+    echo "deb [signed-by=/usr/share/keyrings/cloudflare-warp-archive-keyring.gpg] https://pkg.cloudflareclient.com/ $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/cloudflare-client.list
+    sudo apt-get update
+    sudo apt-get install cloudflare-warp
+    ```
+  </Tab>
+</Tabs>
+
+## Step 2 — Enroll in your organization's team
+
+<Steps>
+  <Step title="Open WARP settings">
+    - **Desktop** (macOS / Windows / Linux): click the WARP menu-bar / system-tray icon → the gear icon → **Preferences** → **Account**.
+    - **Mobile** (iOS / Android): open **Cloudflare One Agent** → **Settings** (gear) → **Account**.
+  </Step>
+  <Step title="Login to Cloudflare Zero Trust">
+    Select **Login to Cloudflare Zero Trust** (on mobile this may be **Login with SSO**).
+  </Step>
+  <Step title="Enter your team name">
+    When prompted for a team name, enter:
+
+    - `wrld` — if you're WRLD staff.
+    - `<shortname>` — your client shortname issued by WRLD (e.g. `acme`).
+
+    <Tip>
+      You enter **only the team name**, not the full URL. Cloudflare will route you to `https://<team>.cloudflareaccess.com` automatically.
+    </Tip>
+  </Step>
+  <Step title="Continue in browser">
+    A browser window opens to `https://<team>.cloudflareaccess.com`. You'll see a list of available identity providers. Proceed to the appropriate section below.
+  </Step>
+</Steps>
+
+## Step 3 — Authenticate with your identity provider
+
+<Tabs>
+  <Tab title="Microsoft Entra ID (Microsoft 365)">
+    Choose this if your organization uses Microsoft 365, Azure AD, or Entra ID for user accounts.
+
+    <Steps>
+      <Step title="Select the Microsoft login option">
+        On the Cloudflare Access login page, click **Sign in with Microsoft** (or the button labeled with your organization's Entra ID tenant name).
+      </Step>
+      <Step title="Authenticate with Microsoft">
+        Enter your work email (e.g. `you@yourcompany.com`) and password, then complete MFA (Microsoft Authenticator push, code, or FIDO2 key — whichever your tenant enforces).
+      </Step>
+      <Step title="Consent to the Cloudflare app (first time only)">
+        If this is your first login, you may be asked to accept permissions for the Cloudflare Access app. Your org may have pre‑consented, in which case this step is skipped.
+      </Step>
+      <Step title="Return to WARP">
+        After successful login, the browser displays a "You may close this window" / "Success" page. Return to the WARP client — it should now show **Connected** with your user identity.
+      </Step>
+    </Steps>
+  </Tab>
+
+  <Tab title="Google Workspace">
+    Choose this if your organization uses Google Workspace (Gmail / Google-managed accounts) for user accounts.
+
+    <Steps>
+      <Step title="Select the Google login option">
+        On the Cloudflare Access login page, click **Sign in with Google** (or the button labeled with your organization's Workspace domain).
+      </Step>
+      <Step title="Authenticate with Google">
+        Choose your work account and complete 2‑Step Verification (prompt, code, or security key).
+
+        <Warning>
+          Make sure you select your **work** Google account, not a personal `@gmail.com` account. Personal accounts will be rejected by the access policy.
+        </Warning>
+      </Step>
+      <Step title="Consent to the Cloudflare app (first time only)">
+        If your Workspace admin hasn't pre‑authorized the Cloudflare Access app, you'll be prompted to allow access. Accept to proceed.
+      </Step>
+      <Step title="Return to WARP">
+        After a "Success" page, return to the WARP client. Its status should switch to **Connected** with your user identity displayed.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Step 4 — Verify your connection
+
+<Steps>
+  <Step title="Check WARP status">
+    The WARP client should show:
+    - **Status**: Connected
+    - **Mode**: Zero Trust (or similar, depending on client version)
+    - **Account**: your work email address
+  </Step>
+  <Step title="Confirm via Cloudflare trace">
+    Open [`https://<team>.cloudflareaccess.com/cdn-cgi/trace`](https://wrld.cloudflareaccess.com/cdn-cgi/trace) in a browser. You should see `warp=on` and `gateway=on` in the output.
+  </Step>
+  <Step title="Try reaching a protected app">
+    Navigate to an internal application covered by your org's Access policy. You should be allowed in without seeing the Access login page again (SSO is now cached in WARP).
+  </Step>
+</Steps>
+
+## Daily use
+
+- The WARP client re‑authenticates automatically based on your org's session duration. You may be prompted to sign in again every 24 hours, 7 days, or 30 days depending on policy.
+- To temporarily disconnect, toggle WARP off from the menu‑bar/tray icon. **Protected apps will stop working** until you reconnect.
+- To switch between the consumer 1.1.1.1 VPN and your Zero Trust team, use **Preferences → Account → Logout from Zero Trust**, then log in fresh.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="'Team name is invalid' / 'Organization not found'">
+    Double-check you entered the correct team name (no URL, no `https://`, no `.cloudflareaccess.com` suffix). For WRLD staff it's `wrld`. For SLA clients, your shortname was issued by WRLD — check your onboarding email or contact [helpdesk@wrld.tech](mailto:helpdesk@wrld.tech).
+  </Accordion>
+
+  <Accordion title="Identity provider button is missing">
+    Your tenant may only have one IdP configured, in which case the login page might go directly to that provider without showing a picker. If you expect to see both Microsoft and Google options and don't, ask WRLD support to confirm which IdPs are enabled for your tenant.
+  </Accordion>
+
+  <Accordion title="'Access denied' after successful SSO login">
+    You authenticated successfully, but the Access policy denied you. Common causes:
+    - Your user account isn't in the required group (e.g. `WRLD-Staff`, or a client-specific group).
+    - Your device doesn't meet posture requirements (OS version, disk encryption, etc.).
+    - You're connecting from a geography or IP the policy excludes.
+
+    Capture the **Ray ID** shown on the denial page and send it to [helpdesk@wrld.tech](mailto:helpdesk@wrld.tech).
+  </Accordion>
+
+  <Accordion title="WARP stuck at 'Registering' or 'Connecting'">
+    - Fully quit and reopen the WARP client.
+    - On macOS: check **System Settings → Network** for a "Cloudflare WARP" interface; toggle it off/on.
+    - On Windows: restart the **Cloudflare WARP** service from `services.msc`.
+    - Ensure your device clock is accurate — large clock skew breaks TLS.
+    - If you're on a restrictive network (e.g. hotel Wi-Fi), it may block MASQUE/WireGuard traffic. Try another network to isolate.
+  </Accordion>
+
+  <Accordion title="DNS resolution fails after connecting">
+    WARP overrides DNS. If a specific internal hostname doesn't resolve:
+    - Ensure your org's Gateway policy includes the required domains.
+    - On macOS, run `scutil --dns` to confirm WARP's resolver is active.
+    - Contact WRLD support so we can review the Gateway DNS policy.
+  </Accordion>
+
+  <Accordion title="Conflict with another VPN (e.g. site-to-site WireGuard)">
+    Running two VPNs at once often breaks routing. Disconnect your site‑to‑site VPN (see [VPN Setup](/support/security/vpn/macos)) before connecting WARP, or ask WRLD to carve out split‑tunnel exceptions for the overlapping subnets.
+  </Accordion>
+
+  <Accordion title="'1.1.1.1' app on mobile doesn't show Zero Trust login option">
+    On iOS and Android, the standalone "1.1.1.1" app is the consumer WARP client and cannot enroll in a team. Install **Cloudflare One Agent** instead (links in Step 1).
+  </Accordion>
+</AccordionGroup>
+
+## Need help?
+
+Email [helpdesk@wrld.tech](mailto:helpdesk@wrld.tech) with:
+- Your team name / shortname.
+- The platform and WARP client version (visible under **Preferences → About**).
+- Any error message shown, plus the Cloudflare **Ray ID** if one was displayed.
+
+## References
+
+- [Cloudflare Zero Trust docs](https://developers.cloudflare.com/cloudflare-one/)
+- [WARP client download](https://1.1.1.1/)
+- [Connect devices with WARP](https://developers.cloudflare.com/cloudflare-one/connections/connect-devices/warp/)
