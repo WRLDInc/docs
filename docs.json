@@ -18,6 +18,7 @@
             "pages": [
               "index",
               "quickstart",
+              "about",
               "development",
               "design",
               "infrastructure"
@@ -44,7 +45,8 @@
           {
             "group": "Technology",
             "pages": [
-              "wrld-tech/overview"
+              "wrld-tech/overview",
+              "wrld-tech/brand-guide"
             ]
           }
         ]
@@ -174,6 +176,21 @@
           "icon": "robot"
         },
         {
+          "anchor": "WRLD.one [Directory]",
+          "href": "https://wrld.one",
+          "icon": "compass"
+        },
+        {
+          "anchor": "WRLD.domains",
+          "href": "https://wrld.domains",
+          "icon": "globe-pointer"
+        },
+        {
+          "anchor": "Status",
+          "href": "https://status.wrld.host",
+          "icon": "signal-bars"
+        },
+        {
           "anchor": "WRLD.News [Blog]",
           "href": "https://wrld.news",
           "icon": "newspaper"
@@ -261,6 +278,22 @@
           {
             "label": "[dot] AI [beta open]",
             "href": "https://wrld.ai"
+          },
+          {
+            "label": "Status",
+            "href": "https://status.wrld.host"
+          },
+          {
+            "label": "Help Center",
+            "href": "https://help.wrld.tech"
+          },
+          {
+            "label": "Labs",
+            "href": "https://labs.wrld.tech"
+          },
+          {
+            "label": "IPFS Gateway",
+            "href": "https://ipfs.wrld.tech"
           }
         ]
       },

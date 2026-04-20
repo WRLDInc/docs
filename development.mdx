@@ -1,7 +1,9 @@
 ---
-title: 'Development'
-description: 'Preview changes locally to update your docs'
+title: "Contributing to these docs"
+description: "How to preview, edit, and ship changes to help.wrld.tech"
 ---
+
+This site is built with [Mintlify](https://mintlify.com) and deployed from the [`WRLDInc/docs`](https://github.com/WRLDInc/docs) repository. Content is authored in MDX, and navigation is configured in `docs.json`.
 
 <Info>
   **Prerequisites**:
@@ -9,86 +11,87 @@ description: 'Preview changes locally to update your docs'
   - A docs repository with a `docs.json` file
 </Info>
 
-Follow these steps to install and run Mintlify on your operating system.
+## Preview locally
 
 <Steps>
-<Step title="Install the Mintlify CLI">
+  <Step title="Install the Mintlify CLI">
+    ```bash
+    npm i -g mint
+    ```
+  </Step>
+  <Step title="Run the dev server">
+    From the repo root (where `docs.json` lives):
 
-```bash
-npm i -g mint
-```
-</Step>
+    ```bash
+    mint dev
+    ```
 
-<Step title="Preview locally">
+    Open <http://localhost:3000>. Pages hot-reload as you edit `.mdx` files.
+  </Step>
+  <Step title="Validate links">
+    Before opening a PR:
 
-Navigate to your docs directory where your `docs.json` file is located, and run the following command:
-
-```bash
-mint dev
-```
-
-A local preview of your documentation will be available at `http://localhost:3000`.
-
-</Step>
+    ```bash
+    mint broken-links
+    ```
+  </Step>
 </Steps>
 
-## Custom ports
+Use `mint dev --port 3333` to change the port, and `mint update` to upgrade the CLI.
 
-By default, Mintlify uses port 3000. You can customize the port Mintlify runs on by using the `--port` flag. For example, to run Mintlify on port 3333, use this command:
+## Add a new page
 
-```bash
-mint dev --port 3333
-```
+1. Create an `.mdx` file under the relevant section directory (for example `wrld-host/new-feature.mdx`).
+2. Add YAML frontmatter:
 
-If you attempt to run Mintlify on a port that's already in use, it will use the next available port:
+   ```mdx
+   ---
+   title: "Page title"
+   description: "One-line summary shown in nav and search."
+   ---
+   ```
 
-```md
-Port 3000 is already in use. Trying 3001 instead.
-```
+3. Register the page path (without `.mdx`) in the appropriate group inside `docs.json`:
 
-## Mintlify versions
+   ```json
+   {
+     "group": "Hosting",
+     "pages": [
+       "wrld-host/overview",
+       "wrld-host/new-feature"
+     ]
+   }
+   ```
 
-Please note that each CLI release is associated with a specific version of Mintlify. If your local preview does not align with the production version, please update the CLI:
+4. Reload `mint dev` and confirm the page appears in the navigation.
+5. Run `mint broken-links` and open a pull request.
 
-```bash
-npm mint update
-```
+## Repository layout
 
-## Validating links
+See the layout table in [`README.md`](https://github.com/WRLDInc/docs/blob/main/README.md). Each top-level directory maps to a tab or group in `docs.json`.
 
-The CLI can assist with validating links in your documentation. To identify any broken links, use the following command:
+## Content conventions
 
-```bash
-mint broken-links
-```
+- **Voice**: first-person plural ("we") for WRLD, second-person ("you") for the reader.
+- **Headings**: use `##` for primary sections — the `title` frontmatter already renders `h1`.
+- **Links**: prefer site-relative links (`/support/overview`) for internal pages. External links are always absolute URLs.
+- **Brand tokens**: do not hard-code colors or fonts in pages. Reference [Design](/design) or [Brand Guide](/wrld-tech/brand-guide) and update those pages if the brand changes upstream.
+- **Source of truth**: WRLD service names, URLs, colors, and typography are mirrored from [`WRLDInc/wrld.one`](https://github.com/WRLDInc/wrld.one). Update there first if a brand token changes.
 
 ## Deployment
 
-If the deployment is successful, you should see the following:
-
-<Frame>
-  <img src="/images/checks-passed.png" alt="Screenshot of a deployment confirmation message that says All checks have passed." style={{ borderRadius: '0.5rem' }} />
-</Frame>
-
-## Code formatting
-
-We suggest using extensions on your IDE to recognize and format MDX. If you're a VSCode user, consider the [MDX VSCode extension](https://marketplace.visualstudio.com/items?itemName=unifiedjs.vscode-mdx) for syntax highlighting, and [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) for code formatting.
+Merges to the default branch auto-deploy via Mintlify's GitHub integration. There is no separate CI build step.
 
 ## Troubleshooting
 
 <AccordionGroup>
-  <Accordion title='Error: Could not load the "sharp" module using the darwin-arm64 runtime'>
-
-    This may be due to an outdated version of node. Try the following:
-    1. Remove the currently-installed version of the CLI: `npm remove -g mint`
-    2. Upgrade to Node v19 or higher.
-    3. Reinstall the CLI: `npm i -g mint`
+  <Accordion title='Error: Could not load the "sharp" module'>
+    Usually an outdated Node version. Remove the CLI (`npm remove -g mint`), upgrade to Node 19+, then reinstall (`npm i -g mint`).
   </Accordion>
-
-  <Accordion title="Issue: Encountering an unknown error">
-  
-    Solution: Go to the root of your device and delete the `~/.mintlify` folder. Then run `mint dev` again.
+  <Accordion title="Page shows 404">
+    Confirm the file path in `docs.json` matches the `.mdx` filename (no extension, no leading slash) and that `mint dev` is running from the directory containing `docs.json`.
+  </Accordion>
+  <Accordion title="Unknown error in local preview">
+    Delete `~/.mintlify` and re-run `mint dev`.
   </Accordion>
 </AccordionGroup>
-
-Curious about what changed in the latest CLI version? Check out the [CLI changelog](https://www.npmjs.com/package/mintlify?activeTab=versions).
