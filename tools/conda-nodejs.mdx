@@ -1,0 +1,222 @@
+---
+title: "Conda for Node.js"
+description: "Isolate Node.js versions per project with Miniconda on macOS"
+icon: "box"
+---
+
+This guide sets up [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main) as a per‑project Node.js version manager on macOS. It's the recommended approach for WRLD team machines that already use conda for Python work, or where tools (like [Mintlify](/development)) require a specific Node LTS that conflicts with the system Node.
+
+<Info>
+  **When to use this vs. `nvm` / `fnm`**
+  - Use conda if you already rely on it for Python, or if you want one tool to manage both Node and Python environments.
+  - Use [`fnm`](https://github.com/Schniz/fnm) or [`nvm`](https://github.com/nvm-sh/nvm) if this machine is mostly JavaScript/Node — they're lighter and honor `.nvmrc` / `.node-version` files automatically.
+</Info>
+
+## Prerequisites
+
+- macOS (Apple Silicon or Intel)
+- Admin access to your user account (no `sudo` required for the steps below)
+- `zsh` (the default shell on modern macOS)
+
+## Install Miniconda
+
+<Steps>
+  <Step title="Download the installer">
+    Apple Silicon (M1/M2/M3/M4):
+
+    ```bash
+    curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-arm64.sh
+    ```
+
+    Intel Macs:
+
+    ```bash
+    curl -O https://repo.anaconda.com/miniconda/Miniconda3-latest-MacOSX-x86_64.sh
+    ```
+  </Step>
+  <Step title="Run the installer">
+    ```bash
+    bash Miniconda3-latest-MacOSX-arm64.sh
+    ```
+
+    Accept the license, accept the default install location (`~/miniconda3`), and answer **yes** when asked whether to update your shell profile.
+  </Step>
+  <Step title="Reload your shell">
+    Close and reopen your terminal, or run:
+
+    ```bash
+    source ~/.zshrc
+    ```
+
+    Verify:
+
+    ```bash
+    conda --version
+    ```
+  </Step>
+  <Step title="(Optional) Stop auto-activating `base`">
+    By default, conda activates its `base` environment in every new terminal. To disable that:
+
+    ```bash
+    conda config --set auto_activate_base false
+    ```
+  </Step>
+  <Step title="Accept channel Terms of Service">
+    Newer conda releases require explicit ToS acceptance for the default Anaconda channels before you can install packages:
+
+    ```bash
+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+    ```
+  </Step>
+  <Step title="Clean up the installer">
+    ```bash
+    rm ~/Miniconda3-latest-MacOSX-arm64.sh
+    ```
+  </Step>
+</Steps>
+
+## Create a Node environment
+
+Create one environment per project and pin the Node major version. Use the `conda-forge` channel — it ships more current Node builds than `defaults`.
+
+```bash
+conda create -n <env-name> -c conda-forge nodejs=<major> -y
+```
+
+Example — a dedicated env for this docs site (Mintlify requires Node LTS):
+
+```bash
+conda create -n docs-mintlify -c conda-forge nodejs=22 -y
+```
+
+<Tip>
+  Pinning `nodejs=22` prevents conda from silently upgrading you to a non‑LTS release on the next `conda update`.
+</Tip>
+
+## Daily workflow
+
+```bash
+# Activate the env for this project
+conda activate docs-mintlify
+
+# Verify the right Node is active
+node -v               # should match the version you pinned
+which node            # should point inside ~/miniconda3/envs/<env-name>/bin/
+
+# Install project dependencies as usual
+npm install
+# or install a CLI globally *into the env*
+npm i -g mint
+
+# When you're done
+conda deactivate
+```
+
+<Info>
+  Global npm installs (`npm i -g ...`) while an env is active install into that env only — they won't pollute your system Node or other envs. This is the whole point of using conda for Node.
+</Info>
+
+## Managing environments
+
+```bash
+# List all envs
+conda env list
+
+# Update Node inside an active env
+conda update -c conda-forge nodejs
+
+# Remove an env entirely
+conda env remove -n <env-name>
+
+# Export an env so teammates can reproduce it
+conda env export -n <env-name> > environment.yml
+
+# Recreate from an exported file
+conda env create -f environment.yml
+```
+
+## Example: running `mint dev` for this docs site
+
+<Steps>
+  <Step title="One-time setup">
+    ```bash
+    conda create -n docs-mintlify -c conda-forge nodejs=22 -y
+    conda activate docs-mintlify
+    npm i -g mint
+    ```
+  </Step>
+  <Step title="Every time you work on docs">
+    ```bash
+    cd ~/repos/docs
+    conda activate docs-mintlify
+    mint dev
+    ```
+
+    The preview runs at [http://localhost:3000](http://localhost:3000).
+  </Step>
+</Steps>
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="zsh: command not found: conda">
+    Your shell hasn't been initialized for conda. Run once:
+
+    ```bash
+    /Users/<you>/miniconda3/bin/conda init zsh
+    source ~/.zshrc
+    ```
+
+    If that still fails, source conda's hook directly in the current shell:
+
+    ```bash
+    source ~/miniconda3/etc/profile.d/conda.sh
+    ```
+  </Accordion>
+  <Accordion title="`node -v` still shows the system version after `conda activate`">
+    A globally installed Node is shadowing the env. Confirm with:
+
+    ```bash
+    which -a node
+    ```
+
+    The first result should be inside `~/miniconda3/envs/<env-name>/bin/`. If it isn't, check your `~/.zshrc` / `~/.zprofile` for a stray `PATH` export (e.g. from a previous Homebrew `node` install) that's prepended *after* conda's init block. Move conda's init below those lines, or uninstall the shadowing Node:
+
+    ```bash
+    brew uninstall node
+    ```
+  </Accordion>
+  <Accordion title="CondaToSNonInteractiveError on create/install">
+    You haven't accepted the Anaconda channel Terms of Service yet. Run:
+
+    ```bash
+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main
+    conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r
+    ```
+  </Accordion>
+  <Accordion title="EnvironmentNameNotFound: Could not find conda environment">
+    The env doesn't exist yet — `conda activate` can only activate envs that were already created with `conda create`. List what you have:
+
+    ```bash
+    conda env list
+    ```
+
+    Then create the one you need (see [Create a Node environment](#create-a-node-environment)).
+  </Accordion>
+  <Accordion title="Mintlify: `not supported on node versions 25+`">
+    You're running a non‑LTS Node. Activate an env pinned to Node 22 (or any current LTS) and reinstall the CLI *inside* that env:
+
+    ```bash
+    conda activate docs-mintlify
+    npm i -g mint
+    mint dev
+    ```
+  </Accordion>
+</AccordionGroup>
+
+## Related
+
+- [Local Mintlify development](/development)
+- [Miniconda documentation](https://www.anaconda.com/docs/getting-started/miniconda/main)
+- [conda-forge Node.js package](https://anaconda.org/conda-forge/nodejs)
