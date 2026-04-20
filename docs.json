@@ -18,23 +18,14 @@
             "pages": [
               "index",
               "quickstart",
-              "about",
-              "development",
-              "design",
-              "infrastructure"
+              "about"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "WRLD.host",
-        "groups": [
+          },
           {
-            "group": "Hosting",
+            "group": "Contributor",
             "pages": [
-              "wrld-host/overview",
-              "wrld-host/getting-started",
-              "wrld-host/knowledgebase"
+              "development",
+              "infrastructure"
             ]
           }
         ]
@@ -45,55 +36,24 @@
           {
             "group": "Technology",
             "pages": [
-              "wrld-tech/overview",
-              "wrld-tech/brand-guide"
+              "wrld-tech/overview"
             ]
           }
         ]
       },
       {
-        "tab": "WRLD.ai",
+        "tab": "WRLD.host",
         "groups": [
           {
-            "group": "AI Services",
+            "group": "Web Hosting",
             "pages": [
-              "wrld-ai/overview"
+              "wrld-host/overview",
+              "wrld-host/getting-started",
+              "wrld-host/knowledgebase"
             ]
           },
           {
-            "group": "AI Tools",
-            "pages": [
-              "ai-tools/claude-code",
-              "ai-tools/cursor",
-              "ai-tools/warp",
-              "ai-tools/windsurf"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Onboarding",
-        "groups": [
-          {
-            "group": "Getting Started",
-            "pages": [
-              "onboarding/overview"
-            ]
-          },
-          {
-            "group": "Microsoft 365",
-            "pages": [
-              "onboarding/microsoft-365/initial-setup"
-            ]
-          },
-          {
-            "group": "Google Workspace",
-            "pages": [
-              "onboarding/google-workspace/overview"
-            ]
-          },
-          {
-            "group": "Domains",
+            "group": "Domains & DNS",
             "pages": [
               "onboarding/domains/godaddy-delegated-access"
             ]
@@ -101,24 +61,45 @@
         ]
       },
       {
-        "tab": "Tools",
+        "tab": "WRLD.design",
         "groups": [
           {
-            "group": "Development Tools",
+            "group": "Design",
             "pages": [
-              "tools/conda-nodejs"
+              "wrld-design/overview",
+              "wrld-tech/brand-guide",
+              "design"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "WRLD.Services",
+        "groups": [
+          {
+            "group": "Onboarding",
+            "pages": [
+              "onboarding/overview"
             ]
           },
           {
-            "group": "Security Tools",
+            "group": "Workspaces",
             "pages": [
+              "onboarding/microsoft-365/initial-setup",
+              "onboarding/google-workspace/overview"
+            ]
+          },
+          {
+            "group": "Internal Tools",
+            "pages": [
+              "tools/conda-nodejs",
               "tools/securesend"
             ]
           }
         ]
       },
       {
-        "tab": "Support",
+        "tab": "WRLD.Support",
         "groups": [
           {
             "group": "Help Center",
@@ -129,7 +110,7 @@
             ]
           },
           {
-            "group": "Getting Support",
+            "group": "Tickets",
             "pages": [
               "support/submit-ticket",
               "support/client-login",
@@ -156,6 +137,26 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "WRLD.AI",
+        "groups": [
+          {
+            "group": "Platform",
+            "pages": [
+              "wrld-ai/overview"
+            ]
+          },
+          {
+            "group": "AI Coding Tools",
+            "pages": [
+              "ai-tools/claude-code",
+              "ai-tools/cursor",
+              "ai-tools/warp",
+              "ai-tools/windsurf"
+            ]
+          }
+        ]
       }
     ],
     "global": {
@@ -163,7 +164,7 @@
         {
           "anchor": "WRLD.tech",
           "href": "https://wrld.tech",
-          "icon": "globe"
+          "icon": "cpu"
         },
         {
           "anchor": "WRLD.host",
@@ -171,9 +172,14 @@
           "icon": "server"
         },
         {
-          "anchor": "WRLD.ai",
+          "anchor": "WRLD.design",
+          "href": "https://wrld.design",
+          "icon": "palette"
+        },
+        {
+          "anchor": "WRLD.AI",
           "href": "https://wrld.ai",
-          "icon": "robot"
+          "icon": "bot"
         },
         {
           "anchor": "WRLD.one [Directory]",
@@ -183,12 +189,12 @@
         {
           "anchor": "WRLD.domains",
           "href": "https://wrld.domains",
-          "icon": "globe-pointer"
+          "icon": "globe"
         },
         {
           "anchor": "Status",
           "href": "https://status.wrld.host",
-          "icon": "signal-bars"
+          "icon": "signal"
         },
         {
           "anchor": "WRLD.News [Blog]",
