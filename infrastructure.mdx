@@ -3,7 +3,7 @@ title: "Infrastructure"
 description: "How WRLD Tech Co. runs its platforms"
 ---
 
-WRLD Tech Co. (WRLD Inc.) operates the full stack behind our client-facing services — hosting, DNS, mail, VoIP, remote support, and AI tooling. This page is a high-level overview; deeper guides live under each product section.
+WRLD Tech Co. (WRLD Inc.) operates the full stack behind our six client-facing divisions — tech, hosting, design, services, support, and AI. This page is a high-level overview; deeper guides live under each division tab.
 
 ## Platforms and stack
 
@@ -13,6 +13,7 @@ WRLD Tech Co. (WRLD Inc.) operates the full stack behind our client-facing servi
 | `wrld.one` (service directory)        | [Astro](https://astro.build) on [Cloudflare Workers](https://workers.cloudflare.com) |
 | `wrld.host` client area & billing     | WHMCS (hosting, domains, SSL, invoicing, ticketing)                              |
 | `wrld.tech` / `wrld.ai` / marketing   | WRLD.host shared infrastructure with CDN + SSL                                   |
+| `wrld.design`                         | Brand identity, design tokens, and marketing surfaces on WRLD infrastructure     |
 | `status.wrld.host`                    | Uptime monitoring and incident history                                           |
 | `ipfs.wrld.tech`                      | IPFS gateway for decentralized content                                           |
 
@@ -29,6 +30,10 @@ WRLD.host provides:
 
 Hosting is reserved for WRLD clients, which keeps neighbors known and traffic quality predictable.
 
+## Design
+
+WRLD.design owns the visual identity of everything that carries the WRLD name — brand tokens, logo usage, UI/UX design, and marketing surfaces. The canonical tokens live in [`WRLDInc/wrld.one`](https://github.com/WRLDInc/wrld.one); the human-readable reference is at [WRLD.design Overview](/wrld-design/overview).
+
 ## Security
 
 - TLS on every public endpoint
@@ -40,14 +45,16 @@ Hosting is reserved for WRLD clients, which keeps neighbors known and traffic qu
 
 ## Identity and onboarding
 
-We operate both Microsoft 365 and Google Workspace tenants for clients. Start at:
+We operate both Microsoft 365 and Google Workspace tenants for clients. Onboarding guides and internal tools are grouped under the [WRLD.Services](/onboarding/overview) tab:
 
 - [Microsoft 365 initial setup](/onboarding/microsoft-365/initial-setup)
 - [Google Workspace overview](/onboarding/google-workspace/overview)
+- [Conda / Node.js setup](/tools/conda-nodejs)
+- [SecureSend](/tools/securesend)
 
 ## AI tooling
 
-WRLD.ai is the AI arm of the business. Day-to-day client tooling is documented under [AI Tools](/ai-tools/claude-code) (Claude Code, Cursor, Warp, Windsurf). Platform details live under [WRLD.ai Overview](/wrld-ai/overview).
+WRLD.ai is the AI arm of the business. Day-to-day client tooling is documented under the [WRLD.AI tab](/wrld-ai/overview) (Claude Code, Cursor, Warp, Windsurf). Platform details live under [WRLD.AI Overview](/wrld-ai/overview).
 
 ## Status
 
