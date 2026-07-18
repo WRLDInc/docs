@@ -217,7 +217,7 @@
       },
       {
         "label": "Open Ticket",
-        "href": "https://wrld.host/contact-us"
+        "href": "/support/submit-ticket"
       }
     ],
     "primary": {
@@ -250,7 +250,7 @@
         "items": [
           {
             "label": "Web Support / Online Chat",
-            "href": "https://wrld.host/submitticket.php"
+            "href": "/support/submit-ticket"
           },
           {
             "label": "Call Support [M-F + After Hours]",
@@ -334,7 +334,7 @@
       "enabled": true
     },
     "gtm": {
-      "tagId": "GTM-PHKVHJ3B"
+      "tagId": "GTM-KX6MKJ2"
     }
   },
   "seo": {
