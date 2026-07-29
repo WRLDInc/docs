@@ -6,6 +6,7 @@ This repo is the documentation surface for the WRLD Tech Co. ecosystem:
 
 - [WRLD.tech](https://wrld.tech) — primary technology portal and brand hub
 - [WRLD.host](https://wrld.host) — hosting, domains, SSL, VoIP, and related infrastructure (client area powered by WHMCS)
+- [WRLD.design](https://wrld.design) — brand identity, design tokens, and logo usage for the WRLD ecosystem
 - [WRLD.ai](https://wrld.ai) — AI tooling and integrations
 - [WRLD.one](https://wrld.one) — unified directory for every WRLD service (canonical source for the service list, brand tokens, and typography used in these docs)
 - [WRLD.support](https://wrld.support) / [help.wrld.tech](https://help.wrld.tech) — support, onboarding, and this documentation site
@@ -45,6 +46,7 @@ mint update            # upgrade the CLI
 ├── infrastructure.mdx       # High-level stack and infrastructure overview
 ├── wrld-host/               # wrld.host product docs (hosting, client area)
 ├── wrld-tech/               # wrld.tech product docs and brand guide
+├── wrld-design/             # wrld.design product docs (brand, tokens, logo)
 ├── wrld-ai/                 # wrld.ai product docs
 ├── ai-tools/                # Guides for Claude Code, Cursor, Warp, Windsurf
 ├── onboarding/              # Microsoft 365, Google Workspace, domain onboarding
