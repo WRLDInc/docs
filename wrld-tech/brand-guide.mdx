@@ -34,6 +34,17 @@ The docs site body font is pinned to Ubuntu via `docs.json` (`fonts.family`).
 - Use the light-mode logo on light backgrounds (`#fcfcfc` and near-white) and the inverse logo on dark backgrounds (`#182534` and near-black).
 - Do not stretch, recolor, add drop shadows, or place the logo on low-contrast photography.
 
+### Favicon
+
+- The approved tab icon / favicon is the **18-ray starburst** mark on a `#0a0a0a` plate — not a circular disc or gear.
+- Canonical source files live in [`WRLDInc/DesignSystem`](https://github.com/WRLDInc/DesignSystem) under `logos/favicons/`: use `favicon.svg` (SVG-first) with `favicon-32x32.png` as the PNG fallback.
+- Reference both in every WRLD property's `<head>` in this order:
+  ```html
+  <link rel="icon" href="/logos/favicons/favicon.svg" type="image/svg+xml">
+  <link rel="icon" type="image/png" sizes="32x32" href="/logos/favicons/favicon-32x32.png">
+  ```
+- Do not use the older raster-only favicon set (ICO or the multi-size PNGs from the pre-v0.2.1 directory) on new or updated properties.
+
 ## Voice and tone
 
 - First-person plural ("we") when speaking for WRLD, second-person ("you") to the reader.
