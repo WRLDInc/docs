@@ -7,7 +7,10 @@
     "light": "#3B82F6",
     "dark": "#1D4ED8"
   },
-  "favicon": "/favicon.svg",
+  "favicon": {
+    "light": "/images/wrldlogo.svg",
+    "dark": "/images/wrldlogo.svg"
+  },
   "navigation": {
     "tabs": [
       {
@@ -19,14 +22,17 @@
               "index",
               "quickstart",
               "about"
-            ]
+            ],
+            "icon": "plane-takeoff",
+            "expanded": true
           },
           {
             "group": "Contributor",
             "pages": [
               "development",
               "infrastructure"
-            ]
+            ],
+            "hidden": true
           }
         ]
       },
@@ -80,21 +86,23 @@
             "group": "Onboarding",
             "pages": [
               "onboarding/overview"
-            ]
+            ],
+            "icon": "handshake"
           },
           {
-            "group": "Workspaces",
+            "group": "Platforms",
             "pages": [
               "onboarding/microsoft-365/initial-setup",
               "onboarding/google-workspace/overview"
-            ]
+            ],
+            "icon": "briefcase-business"
           },
           {
             "group": "Internal Tools",
             "pages": [
-              "tools/conda-nodejs",
-              "tools/securesend"
-            ]
+              "tools/conda-nodejs"
+            ],
+            "hidden": true
           }
         ]
       },
@@ -123,7 +131,8 @@
             "pages": [
               "support/security/overview",
               "support/security/cloudflare-access",
-              "support/security/ios-private-relay"
+              "support/security/ios-private-relay",
+              "tools/securesend"
             ]
           },
           {
@@ -157,10 +166,25 @@
             ]
           }
         ]
+      },
+      {
+        "tab": "Client Portal",
+        "icon": "layout-dashboard",
+        "href": "https://portal.wrld.tech"
       }
     ],
     "global": {
       "anchors": [
+        {
+          "anchor": "WRLD.one [Directory]",
+          "icon": "compass",
+          "href": "https://wrld.one"
+        },
+        {
+          "anchor": "WRLD.news [Blog]",
+          "icon": "newspaper",
+          "href": "https://wrld.news"
+        },
         {
           "anchor": "WRLD.tech",
           "href": "https://wrld.tech",
@@ -170,6 +194,11 @@
           "anchor": "WRLD.host",
           "href": "https://wrld.host",
           "icon": "server"
+        },
+        {
+          "anchor": "WRLD.domains",
+          "icon": "globe",
+          "href": "https://wrld.domains"
         },
         {
           "anchor": "WRLD.design",
@@ -182,24 +211,9 @@
           "icon": "bot"
         },
         {
-          "anchor": "WRLD.one [Directory]",
-          "href": "https://wrld.one",
-          "icon": "compass"
-        },
-        {
-          "anchor": "WRLD.domains",
-          "href": "https://wrld.domains",
-          "icon": "globe"
-        },
-        {
           "anchor": "Status",
           "href": "https://status.wrld.host",
           "icon": "signal"
-        },
-        {
-          "anchor": "WRLD.News [Blog]",
-          "href": "https://wrld.news",
-          "icon": "newspaper"
         }
       ]
     }
@@ -232,10 +246,12 @@
      "view",
      "chatgpt",
      "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
+    "cursor",
+    "vscode",
+    "grok",
+    "mcp",
+    "add-mcp",
+    "download-pdf"
    ]
   },
   "footer": {
@@ -255,6 +271,10 @@
           {
             "label": "Contact Support [M-F + After Hours]",
             "href": "/support/contact"
+          },
+          {
+            "label": "Managed Services Portal",
+            "href": "https://portal.wrld.tech"
           },
           {
             "label": "DIY Guides",
@@ -286,16 +306,16 @@
             "href": "https://wrld.ai"
           },
           {
-            "label": "Status",
-            "href": "https://status.wrld.host"
+            "label": "[dot] design",
+            "href": "https://wrld.design"
           },
           {
             "label": "Help Center",
             "href": "https://help.wrld.tech"
           },
           {
-            "label": "Labs",
-            "href": "https://labs.wrld.tech"
+            "label": "Network Status",
+            "href": "https://status.wrld.host"
           },
           {
             "label": "IPFS Gateway",
@@ -335,6 +355,11 @@
     },
     "gtm": {
       "tagId": "GTM-KX6MKJ2"
+    },
+    "posthog": {
+      "apiKey": "phc_XFbSeJvyouqof8HEF1ysTL7pEiYm8TsmQdBr3tE77WU",
+      "apiHost": "https://us.i.posthog.com",
+      "sessionRecording": true
     }
   },
   "seo": {
@@ -351,10 +376,20 @@
     "default": "system"
   },
   "fonts": {
-    "family": "Ubuntu",
     "body": {
       "family": "Ubuntu"
+    },
+    "heading": {
+      "family": "Montserrat"
     }
   },
-  "description": "WRLD Docs, Help Center, Walkthroughs, and more!"
+  "description": "WRLD Docs, Help Center, Walkthroughs, and more!",
+  "api": {
+    "url": "full",
+    "mdx": {
+      "auth": {
+        "method": "bearer"
+      }
+    }
+  }
 }
