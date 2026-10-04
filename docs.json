@@ -265,20 +265,24 @@
         "header": "Online Support",
         "items": [
           {
-            "label": "Web Support / Online Chat",
+            "label": "Submit Ticket",
             "href": "/support/submit-ticket"
           },
           {
-            "label": "Contact Support [M-F + After Hours]",
+            "label": "Contact Support",
             "href": "/support/contact"
           },
           {
-            "label": "Managed Services Portal",
+            "label": "MSP Portal",
             "href": "https://portal.wrld.tech"
           },
           {
             "label": "DIY Guides",
             "href": "https://guides.wrld.tech"
+          },
+          {
+            "label": "Existing Tickets",
+            "href": "https://portal.wrld.tech"
           }
         ]
       },
@@ -316,10 +320,6 @@
           {
             "label": "Network Status",
             "href": "https://status.wrld.host"
-          },
-          {
-            "label": "IPFS Gateway",
-            "href": "https://ipfs.wrld.tech"
           }
         ]
       },
@@ -336,7 +336,7 @@
           },
           {
             "label": "Partners / Vendors",
-            "href": "https://wrld.tech/contact"
+            "href": "https://wrld.one/partners"
           }
         ]
       }
