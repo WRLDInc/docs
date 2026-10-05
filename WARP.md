@@ -30,7 +30,8 @@ mint broken-links
 ## Architecture
 
 ### Configuration
-- `docs.json` — site configuration: navigation tabs, theme colors, logos, navbar, footer, global anchors, integrations (GTM, telemetry).
+- `docs.json` — site configuration: navigation tabs, theme colors, logos, navbar, footer, global anchors, integrations (GTM, PostHog, telemetry).
+- `gleap.js` — Gleap support widget loader. Mintlify injects every `.js` file in the content directory into every page, so this runs site-wide with no `docs.json` wiring. Uses the same public SDK token as the other WRLD sites.
 
 ### Content structure
 All pages are `.mdx` with YAML frontmatter.
