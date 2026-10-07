@@ -36,7 +36,11 @@ This guide sets up [Miniconda](https://www.anaconda.com/docs/getting-started/min
   </Step>
   <Step title="Run the installer">
     ```bash
+    # Apple Silicon:
     bash Miniconda3-latest-MacOSX-arm64.sh
+
+    # Intel:
+    bash Miniconda3-latest-MacOSX-x86_64.sh
     ```
 
     Accept the license, accept the default install location (`~/miniconda3`), and answer **yes** when asked whether to update your shell profile.
@@ -71,7 +75,10 @@ This guide sets up [Miniconda](https://www.anaconda.com/docs/getting-started/min
   </Step>
   <Step title="Clean up the installer">
     ```bash
+    # Remove whichever installer you downloaded above.
     rm ~/Miniconda3-latest-MacOSX-arm64.sh
+    # or
+    rm ~/Miniconda3-latest-MacOSX-x86_64.sh
     ```
   </Step>
 </Steps>
