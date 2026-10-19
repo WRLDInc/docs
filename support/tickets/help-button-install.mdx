@@ -1,54 +1,117 @@
 ---
 title: "Install the WRLD Help Button"
-description: "Self-install walkthrough for the WRLD Help Desk Button"
+description: "Self-install walkthrough for the WRLD Help Desk Button on Windows and macOS"
 ---
+
+<img
+  src="/images/help-button/help-button-icon.png"
+  alt="WRLD Help Button icon"
+  width="120"
+/>
 
 ## Download & Install
 
-The WRLD Help Button makes submitting support tickets fast and easy. Follow these steps to install it on your Windows device.
+The WRLD Help Button makes submitting support tickets fast and easy. Pick your operating system below and follow the steps.
 
-<Steps>
-  <Step title="Download the Installer">
-    Download the MSI installer file:
+<Tip>
+  The download links below always point to the latest version of the Help Button, so you never need to hunt for an updated file.
+</Tip>
 
-    <Card title="WRLD Help Button Installer" icon="download" href="https://r.craft.do/EmrTm7iDTC">
-      WRLD Help Button - Self Install-1.17.40.msi
-    </Card>
+<Tabs>
+  <Tab title="Windows" icon="windows">
+    <Steps>
+      <Step title="Download the Installer">
+        Download the Windows installer (`.msi`):
 
-    The file will download to your default save folder.
-  </Step>
+        <Card title="WRLD Help Button for Windows" icon="download" href="https://static.helpdeskbuttons.com/get_msi?userid=a3f5ef7d2e583f3e4c581a">
+          Windows 10 and 11 · `.msi` installer · latest version
+        </Card>
 
-  <Step title="Run the Installer">
-    Double-click the downloaded `.msi` file to run it.
+        The file will download to your default save folder (usually **Downloads**).
+      </Step>
+      <Step title="Run the Installer">
+        Double-click the downloaded `.msi` file to run it.
+
+        <Note>
+          If Windows asks for permission, select **Yes**. You may need to right-click the file and choose **Run as administrator**, or ask your IT admin to approve the install.
+        </Note>
+      </Step>
+      <Step title="Select a Function Key">
+        When prompted, choose which function key (F1–F11) opens the Help Button.
+
+        **We recommend selecting F1** for quick access.
+      </Step>
+      <Step title="Restart Your Computer">
+        The installer will ask you to restart. Select **Yes** to complete the installation.
+      </Step>
+    </Steps>
+
+    ### Where to find it on Windows
+
+    - **Taskbar** - Look for the WRLD logo with "HELP"
+    - **Desktop** - Icon alongside your other desktop icons
+    - **Function key** - Press the key you chose during install (for example **F1**)
+    - **System tray** - Right-click the tray icon
+
+    <Frame caption="The Help Button pinned to the Windows taskbar">
+      <img
+        src="/images/help-button/taskbar.jpg"
+        alt="WRLD Help Button in the Windows taskbar"
+      />
+    </Frame>
+  </Tab>
+  <Tab title="macOS" icon="apple">
+    <Steps>
+      <Step title="Download the Installer">
+        Download the macOS installer (`.pkg`):
+
+        <Card title="WRLD Help Button for macOS" icon="download" href="https://static.helpdeskbuttons.com/get_pkg?userid=a3f5ef7d2e583f3e4c581a">
+          macOS · `.pkg` installer · latest version
+        </Card>
+
+        The file will download to your **Downloads** folder.
+      </Step>
+      <Step title="Run the Installer">
+        Double-click the downloaded `.pkg` file and follow the prompts. Enter your Mac password when asked to allow the install.
+      </Step>
+      <Step title="Allow Screen Recording">
+        The Help Button needs permission to capture screenshots for your ticket.
+
+        1. Open **System Settings** → **Privacy & Security** → **Screen & System Audio Recording**.
+        2. Click the **\+** button and open the **Applications** folder.
+        3. Press **⌘ Command + Shift + G**, type `.Tier2SVC`, and click **Open**.
+        4. Make sure the toggle next to **.Tier2SVC** is turned **on**.
+
+        <Warning>
+          Without this permission, screenshots can't be attached to your tickets and the **Include Screenshots** option won't appear.
+        </Warning>
+      </Step>
+      <Step title="Allow Input Monitoring">
+        Repeat the same steps under **System Settings** → **Privacy & Security** → **Input Monitoring**, adding `.Tier2SVC` and turning the toggle **on**.
+
+        This lets the Help Button capture the clicks leading up to your issue, so we can see exactly what happened.
+      </Step>
+      <Step title="Restart and Launch">
+        Restart your Mac (or log out and back in) so the new permissions take effect. Then open the Help Button from your **Applications** folder, or press **⌘ Command + Space** and search for **Help**.
+      </Step>
+    </Steps>
 
     <Note>
-    You may need to right-click and select "Run as Administrator" or approve security alerts.
+      When the Help Button captures your screen, macOS shows a purple indicator in the menu bar. This is normal. Newer versions of macOS may also ask you to re-confirm screen recording permission from time to time; select **Allow** to keep screenshots working.
     </Note>
-  </Step>
-
-  <Step title="Select Function Key">
-    When prompted, select which function key to assign to the Help Button.
-
-    **We recommend selecting F1** for quick access.
-
-    ![F1 Key Selection](https://r.craft.do/1eM4cFhlAZ)
-  </Step>
-
-  <Step title="Restart Your Computer">
-    The installer will ask you to restart your computer. Select "Yes" to complete the installation.
-
-    ![Restart Prompt](https://r.craft.do/1EreO51L9R)
-  </Step>
-</Steps>
+  </Tab>
+</Tabs>
 
 ## After Installation
 
-Once installed, you can access the Help Button from:
+When you click the Help Button, it runs a quick set of diagnostics (screenshots, logs, network checks) so our team has everything needed to help you, with no screenshots or long explanations required from you.
 
-- **Taskbar** - Look for the WRLD logo with "HELP"
-- **Desktop** - Icon alongside other desktop icons
-- **F1 Key** - Press F1 (if configured during install)
-- **System Tray** - Right-click the tray icon
+<Frame caption="The Help Button running its diagnostic checks">
+  <img
+    src="/images/help-button/diagnostics.png"
+    alt="WRLD Help Button running diagnostic tests"
+  />
+</Frame>
 
 <Card title="Learn how to use the Help Button" icon="circle-help" href="/support/tickets/help-button">
   See our guide on submitting tickets with the Help Button
@@ -56,4 +119,4 @@ Once installed, you can access the Help Button from:
 
 ## Need Help?
 
-If you encounter issues during installation, contact us at [helpdesk@wrld.tech](mailto:helpdesk@wrld.tech) or call **469.299.9598**.
+If you run into issues during installation, contact us at [helpdesk@wrld.tech](mailto:helpdesk@wrld.tech), call **469.299.9598**, or [submit a ticket in the client portal](/support/submit-ticket).
