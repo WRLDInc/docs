@@ -4,7 +4,7 @@ This file provides guidance to WARP (warp.dev) when working with code in this re
 
 ## Project overview
 
-This is the public **WRLD Tech documentation site** for WRLD Tech Co. (WRLD Inc.), covering WRLD.tech, WRLD.host, WRLD.ai, WRLD.support, and related onboarding/tooling. It is a [Mintlify](https://mintlify.com) site authored in MDX and configured via `docs.json`. It ships to [help.wrld.tech](https://help.wrld.tech).
+This is the public **WRLD Tech documentation site** for WRLD Tech Co. (WRLD Inc.), covering WRLD.tech, WRLD.host, WRLD.design, WRLD.ai, WRLD.support, and related onboarding/tooling. It is a [Mintlify](https://mintlify.com) site authored in MDX and configured via `docs.json`. It ships to [help.wrld.tech](https://help.wrld.tech).
 
 The canonical WRLD service directory, brand colors, and typography used by these docs are defined in [`WRLDInc/wrld.one`](https://github.com/WRLDInc/wrld.one) (an Astro + Cloudflare Workers site). Keep brand tokens in `design.mdx` and `wrld-tech/brand-guide.mdx` consistent with that source.
 
@@ -43,6 +43,7 @@ All pages are `.mdx` with YAML frontmatter.
 - `infrastructure.mdx` — stack / infrastructure overview
 - `wrld-host/` — hosting service docs
 - `wrld-tech/` — technology service docs (includes brand guide)
+- `wrld-design/` — design division docs (brand, tokens, logo usage)
 - `wrld-ai/` — AI service docs
 - `ai-tools/` — Claude Code, Cursor, Warp, Windsurf guides
 - `onboarding/` — Microsoft 365, Google Workspace, domain onboarding
