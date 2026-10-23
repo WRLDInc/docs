@@ -1,109 +1,163 @@
 ---
 title: "WRLD Help Button"
-description: "1-Click-and-Done Problem Resolution - Best Method for Getting Support"
+sidebarTitle: "Help Button"
+description: "Get help fast. Press WRLD HELP on your Windows PC, or reach us by phone, email, or the client portal."
 ---
 
-## How To Use The WRLD Help Desk Button
+## Get help now
 
-**Skip the screenshots and the facetime calls.** The BUTTON made by our partner Tier2 is here to help - we'll spare you the technical details, diagnostics and screengrabs it automatically provides to help us better help you and get straight to it.
+{/* Phones (QR magnet scans) see call/email/portal first; desktops see WRLD HELP first. */}
+<div className="flex flex-col">
+  <div className="order-2 sm:order-1">
+    <p className="not-prose mb-2 text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">On your Windows PC</p>
+    <div className="not-prose flex items-center gap-4 sm:gap-5 rounded-lg border border-gray-950/10 dark:border-white/10 bg-white dark:bg-[#0a0a0a] p-4 sm:p-5">
+      <img
+        src="/images/help-button/help-button-logo.png"
+        alt="WRLD HELP button logo"
+        className="w-16 h-16 sm:w-20 sm:h-20 shrink-0"
+        noZoom
+      />
+      <div className="min-w-0">
+        <p className="text-base font-semibold text-gray-900 dark:text-gray-100">Press WRLD HELP. We get your request with diagnostics attached.</p>
+        <a href="tier2tickets://run" target="_self" className="mt-3 inline-flex items-center gap-2 rounded-full bg-gray-950 dark:bg-white px-4 py-2 text-sm font-semibold text-white dark:text-gray-950 hover:bg-[#007fee] dark:hover:bg-[#007fee] dark:hover:text-white">Open WRLD HELP →</a>
+      </div>
+    </div>
+    <p className="text-sm">Nothing happens? Press <strong>F1</strong> or click the icon in your taskbar. More shortcuts are <a href="#open-the-help-button-on-windows">below</a>.</p>
+  </div>
+  <div className="order-1 sm:order-2 sm:mt-4">
+    <p className="not-prose mb-2 text-xs font-semibold uppercase tracking-widest text-gray-500 dark:text-gray-400">From any device</p>
+    <CardGroup cols={2}>
+      <Card title="Call support" icon="phone" href="tel:+14698503968">
+        (469) 850-3968 · critical issues answered 24/7 for managed clients
+      </Card>
+      <Card title="Email the help desk" icon="mail" href="mailto:helpdesk@wrld.tech">
+        helpdesk{'@'}wrld.tech · tell us what happened, when, and who it affects
+      </Card>
+      <Card title="Client portal" icon="log-in" href="/support/submit-ticket">
+        Sign in to open a ticket or check on one you've already sent
+      </Card>
+      <Card title="Install the Help Button" icon="download" href="/support/tickets/help-button-install">
+        Set it up on Windows or macOS in a few minutes
+      </Card>
+    </CardGroup>
+    <Tip>
+      Prefer to chat? Tap the orange button in the bottom corner of this page. Standard requests are handled Monday to Friday, 10am to 6pm CT.
+    </Tip>
+  </div>
+</div>
 
-<Card title="Don't have it installed?" icon="download" href="/support/tickets/help-button-install">
-  Follow our quick install guide for Windows or macOS to get the Help Button on your device.
-</Card>
+## Open the Help Button on Windows
 
-## Where Can I Find It?
+The WRLD Help Button is a small desktop app from our partner [Tier2 Tickets](https://tier2tickets.com) (Helpdesk Buttons), not a web form. Opening it takes screenshots and runs quick checks on your computer before you type a word. Use whichever shortcut is closest:
 
-Look for our logo with **HELP**:
+| Shortcut | How |
+| --- | --- |
+| **Link** | Click <a href="tier2tickets://run" target="_self" className="link">Open WRLD HELP</a> on this page. If your browser asks, choose **Open**. |
+| **Function key** | Press **F1**, or the key chosen when the app was installed. |
+| **Taskbar** | Click the **WRLD HELP** icon. Hovering over it shows *Helpdesk Button*. |
+| **Start menu** | Press the **Windows** key, type `Helpdesk`, then press **Enter**. |
+| **Run box** | Press **Windows + R**, enter `tier2tickets://run`, then press **Enter**. |
+| **Desktop or tray** | Double-click the desktop icon, or right-click the icon near the clock. |
 
-<img
-  src="/images/help-button/help-button-icon.png"
-  alt="WRLD Help Button icon"
-  width="120"
-/>
-
-**On Windows:**
-
-- **Your Taskbar!** Look for our logo with 'HELP' and simply click it
-- **Your Desktop Icon** (Mixed in with other icons like the Recycle Bin)
-- **By Pressing F1** (or the function key chosen during install)
-- **By right-clicking** your system tray
-
-<Frame caption="The Help Button pinned to the Windows taskbar">
+<Frame caption="WRLD HELP pinned to the Windows taskbar">
   <img
-    src="/images/help-button/taskbar.jpg"
-    alt="WRLD Help Button in the Windows taskbar"
+    src="/images/help-button/help-button-taskbar.jpg"
+    alt="Windows taskbar with the WRLD HELP icon highlighted"
   />
 </Frame>
 
-**On macOS:** open the Help Button from your **Applications** folder, or press **⌘ Command + Space** and search for **Help**.
-
-## How to Submit a Diagnostic Helpdesk Ticket
+**On macOS:** open WRLD HELP from your **Applications** folder, or press **⌘ Command + Space** and search for **Help**.
 
 <Note>
-**First time running?** You'll be prompted to enter your contact info (name and work email). This only happens once per user.
+  If the link or shortcut does nothing, the app may not be installed on this computer yet. [Install the Help Button](/support/tickets/help-button-install), or use one of the options in [Get help now](#get-help-now).
 </Note>
 
-When you click the Help Button, it first runs a quick set of diagnostics in the background:
+## What happens when you press it
 
-<Frame caption="Diagnostics run automatically when you press the Help Button">
-  <img
-    src="/images/help-button/diagnostics.png"
-    alt="WRLD Help Button running diagnostic tests"
-  />
+The app runs its diagnostics first: screenshots, recent logs, network latency and packet loss, the Windows Event Viewer, and process usage. It takes a few seconds and needs nothing from you.
+
+<Frame caption="Diagnostics run automatically as soon as WRLD HELP opens">
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    poster="/images/help-button/help-button-diagnostics-poster.jpg"
+    src="/images/help-button/help-button-diagnostics.mp4"
+    className="w-full max-w-md mx-auto aspect-square"
+  ></video>
 </Frame>
 
-### Steps
+## Submit your ticket
 
-1. **Click the WRLD Help Button** in your taskbar, desktop, or Applications folder
-2. **Describe your issue** to the best of your ability, and let us know how urgent it is and how many people it affects
+<Steps>
+  <Step title="Confirm your name and work email">
+    The first time you use the Help Button, enter the name and work email we should reply to. You'll only see this once per Windows user.
 
-<Frame caption="Step 2 of 3: describe your problem or request">
-  <img
-    src="/images/help-button/ticket-details.jpg"
-    alt="Problem and request details form"
-  />
-</Frame>
+    1. Your name and work email
+    2. **Describe Issue** to continue
 
-3. **Review AI suggestions** - You may be shown solutions to try first. Click "None of these, Continue" if they don't help.
-4. **Confirm consent** - Acknowledge that you're not sending protected/confidential information, then click **Submit**
+    <Frame caption="Step 1 of 3: who we should reply to">
+      <img
+        src="/images/help-button/help-button-step-1-contact.jpg"
+        alt="Data collected and ready for submission, with name and email fields and a Describe Issue button"
+      />
+    </Frame>
 
-<Frame caption="Step 3 of 3: review, confirm consent, and submit">
-  <img
-    src="/images/help-button/submission-review.jpg"
-    alt="Submission review and consent screen"
-  />
-</Frame>
+    **Visit the portal** on the left opens the client portal, where you can check tickets you've already sent.
+  </Step>
+  <Step title="Describe the problem or request">
+    Tell us what's going on in your own words.
 
-5. **Receive your ticket number** - You'll get a confirmation with your ticket number so you can track progress
+    1. What happened, or what you need
+    2. Optional: ask us to connect remotely, call you, or book an on-site visit
+    3. How urgent it is
+    4. How many people it affects
+    5. **Review Submission** to continue
 
-## Why Use the Help Button?
+    <Frame caption="Step 2 of 3: describe your problem or request">
+      <img
+        src="/images/help-button/help-button-step-2-details.jpg"
+        alt="Problem and request details form with a description box, contact options, urgency, and scope"
+      />
+    </Frame>
+  </Step>
+  <Step title="Try a suggested fix, or continue">
+    You may see a few fixes to try first. If none of them help, select **None of these, Continue**.
+  </Step>
+  <Step title="Review, consent, and submit">
+    Check the summary, then send it.
+
+    1. Your contact details, description, and selections
+    2. Leave **Submit Diagnostic Data** and **Submit Screen Shots** checked unless they show something private
+    3. Confirm you're not sending protected or confidential information (required)
+    4. **Submit**
+
+    <Frame caption="Step 3 of 3: review, confirm consent, and submit">
+      <img
+        src="/images/help-button/help-button-step-3-review.jpg"
+        alt="Submission review screen with the consent checkbox highlighted"
+      />
+    </Frame>
+  </Step>
+  <Step title="Watch for your ticket number">
+    You'll get a confirmation with your ticket number so you can follow progress. We'll reply by email or phone, depending on what you asked for.
+  </Step>
+</Steps>
+
+## Why the Help Button is fastest
 
 <Columns cols={2}>
-  <Card title="Automatic Diagnostics" icon="chart-line">
-    Captures your last 10 clicks and system health automatically
+  <Card title="Automatic diagnostics" icon="activity">
+    Captures your last 10 clicks and your computer's health, so we can see what happened.
   </Card>
-  <Card title="Skip Screenshots" icon="camera-off">
-    No need to take and attach screenshots manually
+  <Card title="No screenshots needed" icon="camera-off">
+    The app takes them for you, and you choose whether to send them.
   </Card>
-  <Card title="Faster Resolution" icon="bolt">
-    Get help quicker with all the info we need upfront
+  <Card title="Fewer follow-up questions" icon="zap">
+    We get what we need up front, so we can start working right away.
   </Card>
-  <Card title="Track Progress" icon="list-checks">
-    Receive a ticket number to track your request
-  </Card>
-</Columns>
-
-## Not on a Company Device?
-
-If you're on your mobile or don't see the Help Button, you can still submit tickets:
-
-<Columns cols={2}>
-  <Card title="WRLD client portal" icon="building" href="/support/submit-ticket">
-    Sign in to the secure client portal to submit tickets
-  </Card>
-  <Card title="Install the Help Button" icon="download" href="/support/tickets/help-button-install">
-    Download it for Windows or macOS in a few minutes
+  <Card title="Trackable" icon="list-checks">
+    Every request gets a ticket number you can follow in the client portal.
   </Card>
 </Columns>
-
-See more at [help.wrld.tech](https://help.wrld.tech)
