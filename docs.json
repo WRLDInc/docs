@@ -367,6 +367,12 @@
   "seo": {
     "indexing": "navigable"
   },
+  "redirects": [
+    {
+      "source": "/helpbutton",
+      "destination": "/support/tickets/help-button"
+    }
+  ],
   "background": {
     "decoration": "windows",
     "color": {

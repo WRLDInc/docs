@@ -4,9 +4,10 @@ description: "Self-install walkthrough for the WRLD Help Desk Button on Windows 
 ---
 
 <img
-  src="/images/help-button/help-button-icon.png"
-  alt="WRLD Help Button icon"
-  width="120"
+  src="/images/help-button/help-button-logo.png"
+  alt="WRLD HELP button logo"
+  width="112"
+  noZoom
 />
 
 ## Download & Install
@@ -48,15 +49,16 @@ The WRLD Help Button makes submitting support tickets fast and easy. Pick your o
 
     ### Where to find it on Windows
 
-    - **Taskbar** - Look for the WRLD logo with "HELP"
+    - **Taskbar** - Click the **WRLD HELP** icon
     - **Desktop** - Icon alongside your other desktop icons
     - **Function key** - Press the key you chose during install (for example **F1**)
+    - **Link** - Click <a href="tier2tickets://run" target="_self" className="link">Open WRLD HELP</a>, or press **Windows + R** and enter `tier2tickets://run`
     - **System tray** - Right-click the tray icon
 
-    <Frame caption="The Help Button pinned to the Windows taskbar">
+    <Frame caption="WRLD HELP pinned to the Windows taskbar">
       <img
-        src="/images/help-button/taskbar.jpg"
-        alt="WRLD Help Button in the Windows taskbar"
+        src="/images/help-button/help-button-taskbar.jpg"
+        alt="Windows taskbar with the WRLD HELP icon highlighted"
       />
     </Frame>
   </Tab>
@@ -107,10 +109,15 @@ The WRLD Help Button makes submitting support tickets fast and easy. Pick your o
 When you click the Help Button, it runs a quick set of diagnostics (screenshots, logs, network checks) so our team has everything needed to help you, with no screenshots or long explanations required from you.
 
 <Frame caption="The Help Button running its diagnostic checks">
-  <img
-    src="/images/help-button/diagnostics.png"
-    alt="WRLD Help Button running diagnostic tests"
-  />
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    poster="/images/help-button/help-button-diagnostics-poster.jpg"
+    src="/images/help-button/help-button-diagnostics.mp4"
+    className="w-full max-w-md mx-auto aspect-square"
+  ></video>
 </Frame>
 
 <Card title="Learn how to use the Help Button" icon="circle-help" href="/support/tickets/help-button">
