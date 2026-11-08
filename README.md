@@ -37,6 +37,7 @@ mint update            # upgrade the CLI
 ```
 .
 ├── docs.json                # Site navigation, theme, anchors, footer, integrations
+├── gleap.js                 # Gleap support widget (auto-injected on every page by Mintlify)
 ├── index.mdx                # Homepage
 ├── about.mdx                # About WRLD Tech Co. (mission, vision, values)
 ├── quickstart.mdx           # Customer quickstart
