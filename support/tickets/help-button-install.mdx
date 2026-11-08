@@ -34,7 +34,9 @@ The WRLD Help Button makes submitting support tickets fast and easy. Pick your o
         Double-click the downloaded `.msi` file to run it.
 
         <Note>
-          If Windows asks for permission, select **Yes**. You may need to right-click the file and choose **Run as administrator**, or ask your IT admin to approve the install.
+          If Windows asks for permission, select **Yes**. If your account isn't allowed to install software, ask your IT admin to approve the install.
+
+          IT admins can also install from an elevated terminal: open **Start**, search for **Command Prompt**, choose **Run as administrator**, and run `msiexec /i "<path to the downloaded file>.msi"`.
         </Note>
       </Step>
       <Step title="Select a Function Key">
@@ -81,7 +83,7 @@ The WRLD Help Button makes submitting support tickets fast and easy. Pick your o
 
         1. Open **System Settings** → **Privacy & Security** → **Screen & System Audio Recording**.
         2. Click the **\+** button and open the **Applications** folder.
-        3. Press **⌘ Command + Shift + G**, type `.Tier2SVC`, and click **Open**.
+        3. Press **⌘ Command + Shift + G**, type `.Tier2SVC`, and press **Return** to select it. Then click **Open**.
         4. Make sure the toggle next to **.Tier2SVC** is turned **on**.
 
         <Warning>
@@ -89,9 +91,13 @@ The WRLD Help Button makes submitting support tickets fast and easy. Pick your o
         </Warning>
       </Step>
       <Step title="Allow Input Monitoring">
-        Repeat the same steps under **System Settings** → **Privacy & Security** → **Input Monitoring**, adding `.Tier2SVC` and turning the toggle **on**.
+        This permission is **optional**. It lets the Help Button capture the clicks leading up to your issue, so we can see exactly what happened.
 
-        This lets the Help Button capture the clicks leading up to your issue, so we can see exactly what happened.
+        To turn it on, repeat steps 1–4 above, but in step 1 open **System Settings** → **Privacy & Security** → **Input Monitoring**. Add `.Tier2SVC` (press **Return** after typing it, then click **Open**) and turn the toggle **on**.
+
+        <Info>
+          macOS Input Monitoring also lets an app see keyboard input, not only mouse clicks. If you'd rather not grant it, skip this step: the Help Button still works and falls back to taking screenshots at regular intervals before you submit a ticket.
+        </Info>
       </Step>
       <Step title="Restart and Launch">
         Restart your Mac (or log out and back in) so the new permissions take effect. Then open the Help Button from your **Applications** folder, or press **⌘ Command + Space** and search for **Help**.
