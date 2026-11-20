@@ -123,7 +123,8 @@
               "support/submit-ticket",
               "support/client-login",
               "support/tickets/help-button",
-              "support/tickets/help-button-install"
+              "support/tickets/help-button-install",
+              "support/tickets/request-portal-access"
             ]
           },
           {
