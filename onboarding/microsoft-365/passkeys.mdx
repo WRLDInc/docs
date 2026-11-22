@@ -1,0 +1,110 @@
+---
+title: "Set up a passkey for Microsoft 365"
+sidebarTitle: "Passkeys"
+description: "Replace codes and push approvals with a passkey in Microsoft Authenticator, Windows Hello, or your Mac's sign-in."
+icon: "key-round"
+keywords:
+  - "passkey"
+  - "passwordless"
+  - "Microsoft Authenticator"
+  - "Windows Hello"
+  - "Platform SSO"
+  - "MFA"
+  - "2FA"
+  - "phishing-resistant"
+---
+
+A passkey lets you sign in to Microsoft 365 with your face, fingerprint, or device PIN instead of typing codes or approving push notifications. Passkeys can't be phished: they only work on the real Microsoft sign-in page, and only on a device you've registered.
+
+<Info>
+  WRLD staff need a passkey or another phishing-resistant sign-in method. You'll see a reminder at sign-in until you add one. You can postpone the reminder a few times; after that, setup is required.
+</Info>
+
+{/* Guidejar walkthrough embed goes here once recorded. */}
+
+## Before you start
+
+- You can already sign in to Microsoft 365 with your work account. If not, start with [Microsoft 365 initial sign-in](/onboarding/microsoft-365/initial-setup).
+- Your phone runs iOS 17 / Android 14 or later and has **Microsoft Authenticator** installed and updated.
+- Bluetooth is on for both your phone and computer if you set up from a computer.
+
+## Choose your method
+
+<Tabs>
+  <Tab title="Phone (Microsoft Authenticator)">
+    Works everywhere and is the recommended first passkey.
+
+    <Steps>
+      <Step title="Open your security info">
+        On your computer, go to [mysignins.microsoft.com/security-info](https://mysignins.microsoft.com/security-info) and sign in with your work account.
+      </Step>
+      <Step title="Add a passkey">
+        Select **Add sign-in method**, then **Passkey**, then **Microsoft Authenticator**.
+      </Step>
+      <Step title="Link your phone">
+        Follow the prompts. When a QR code appears, scan it with your phone's camera and approve with your face, fingerprint, or phone PIN.
+      </Step>
+      <Step title="Name it">
+        Give the passkey a name you'll recognize, such as **iPhone Authenticator**, and select **Done**.
+      </Step>
+    </Steps>
+
+    <Tip>
+      You can also start on the phone: open Authenticator, tap your work account, and choose **Create a passkey**.
+    </Tip>
+  </Tab>
+  <Tab title="Windows PC (Windows Hello)">
+    On a WRLD-managed Windows PC, Windows Hello for Business is your passkey. Set it up once and you won't be prompted for MFA on that PC.
+
+    <Steps>
+      <Step title="Set up Windows Hello">
+        Open **Settings** > **Accounts** > **Sign-in options** and set up **Facial recognition**, **Fingerprint**, or **PIN (Windows Hello)**.
+      </Step>
+      <Step title="Use a 6-digit PIN or longer">
+        If Windows asks you to change your PIN, choose one with at least 6 digits.
+      </Step>
+      <Step title="Sign in with Windows Hello">
+        Lock and unlock your PC with Windows Hello. Microsoft 365 apps and Edge sign you in automatically.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Mac (Platform SSO)">
+    On a WRLD-managed Mac, your Mac's sign-in becomes your passkey through Platform SSO.
+
+    <Steps>
+      <Step title="Enroll the Mac">
+        Install **Company Portal** from the App Store, open it, and sign in with your work account to enroll the Mac. If you get stuck, contact the helpdesk.
+      </Step>
+      <Step title="Register when prompted">
+        When macOS shows **Registration required**, select **Register** and sign in with your work account.
+      </Step>
+      <Step title="Approve with Touch ID">
+        Approve with Touch ID or your Mac password. After that, Microsoft apps and Edge sign you in with Touch ID.
+      </Step>
+    </Steps>
+  </Tab>
+</Tabs>
+
+## Sign in with your passkey
+
+1. Go to a Microsoft sign-in page and enter your work email.
+2. Choose **Face, fingerprint, PIN, or security key**.
+3. Approve on your device. On a computer without your passkey, choose your phone and scan the QR code.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="I don't see the Passkey option">
+    Update Microsoft Authenticator, then refresh the security info page. If the option still isn't there, contact the helpdesk.
+  </Accordion>
+  <Accordion title="The QR code scan doesn't connect">
+    Turn on Bluetooth on both devices and keep your phone near the computer. Phone and computer don't need to be on the same Wi-Fi network.
+  </Accordion>
+  <Accordion title="I lost or replaced my phone">
+    Contact the helpdesk. We'll issue a one-time Temporary Access Pass so you can sign in and add a passkey on your new phone, then remove the old one.
+  </Accordion>
+</AccordionGroup>
+
+## Need help?
+
+Contact [helpdesk@wrld.tech](mailto:helpdesk@wrld.tech) or use the [WRLD Help Button](/support/tickets/help-button).

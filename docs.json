@@ -93,6 +93,7 @@
             "group": "Platforms",
             "pages": [
               "onboarding/microsoft-365/initial-setup",
+              "onboarding/microsoft-365/passkeys",
               "onboarding/google-workspace/overview"
             ],
             "icon": "briefcase-business"
