@@ -238,7 +238,7 @@
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://wrld.host/clientarea.php"
+      "href": "https://portal.wrld.tech"
     }
   },
   "contextual": {
@@ -349,7 +349,7 @@
     "library": "lucide"
   },
   "styling": {
-    "latex": false,
+    "latex": true,
     "eyebrows": "section"
   },
   "integrations": {
@@ -366,7 +366,18 @@
     }
   },
   "seo": {
-    "indexing": "navigable"
+    "indexing": "navigable",
+    "organization": {
+      "name": "WRLD",
+      "legalName": "WRLD Inc.",
+      "url": "https://wrld.tech",
+      "sameAs": [
+        "https://github.com/WRLDInc",
+        "https://linkedin.com/company/wrldtech",
+        "https://facebook.com/WRLDTechCo",
+        "https://x.com/WRLDTechCo"
+      ]
+    }
   },
   "redirects": [
     {
@@ -382,7 +393,8 @@
     }
   },
   "appearance": {
-    "default": "system"
+    "default": "system",
+    "strict": false
   },
   "fonts": {
     "body": {
@@ -392,13 +404,26 @@
       "family": "Montserrat"
     }
   },
-  "description": "WRLD Docs, Help Center, Walkthroughs, and more!",
+  "description": "WRLD Tech Docs, Help Center, Walkthroughs, and more!",
   "api": {
     "url": "full",
     "mdx": {
       "auth": {
         "method": "bearer"
       }
+    },
+    "playground": {
+      "credentials": true
+    }
+  },
+  "thumbnails": {
+    "preset": "headline",
+    "surface": "brand",
+    "fonts": {
+      "family": "Ubuntu"
+    },
+    "eyebrow": {
+      "style": "bar"
     }
   }
 }
